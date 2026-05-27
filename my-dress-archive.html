@@ -8,87 +8,86 @@
 <meta name="apple-mobile-web-app-title" content="Dress Archive">
 <title>My Dress Archive</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --linen:       #F5F0E8;
-  --linen2:      #EDE7D9;
-  --linen3:      #E4DDD0;
-  --moss:        #4A6741;
-  --moss-light:  #6A8F5F;
-  --sage:        #8AAF82;
-  --sage-light:  #B2CCA8;
-  --sage-pale:   #DFF0D8;
-  --clover:      #C4785A;
-  --clover-soft: #D9A08A;
-  --clover-pale: #F2DDD5;
-  --lavender:    #9490B8;
-  --lav-pale:    #E8E6F4;
-  --meadow:      #7A9E6A;
-  --ink:         #2A2E1E;
-  --ink-mid:     #4A5038;
-  --ink-light:   #7A8068;
-  --border:      #CEC8B8;
-  --border-lt:   #E2DBCE;
-  --white:       #FDFAF4;
-  --shadow:      rgba(42,46,30,0.10);
+  --ivory:       #FAF5EE;
+  --ivory2:      #F2EBE0;
+  --ivory3:      #E8DFCF;
+  --blush:       #E8A0A8;
+  --blush-deep:  #C97080;
+  --blush-pale:  #F7DCE0;
+  --blush-soft:  #FCEEF0;
+  --rose:        #D4607A;
+  --rose-pale:   #F9E0E6;
+  --lavender:    #A898C8;
+  --lav-deep:    #7860A8;
+  --lav-pale:    #EDE8F8;
+  --lav-soft:    #F5F2FC;
+  --dusty:       #C0A0B8;
+  --dusty-pale:  #F0E8F0;
+  --peony:       #C8607A;
+  --mauve:       #B87898;
+  --mauve-pale:  #F5EAF2;
+  --stem:        #7A8A6A;
+  --stem-light:  #A8B898;
+  --ink:         #2A2030;
+  --ink-mid:     #5A4A60;
+  --ink-light:   #9A8AA0;
+  --border:      #DDD0D8;
+  --border-lt:   #EDE4E8;
+  --white:       #FFFCF8;
+  --shadow:      rgba(42,32,48,0.09);
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 16px; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:16px;}
 
 body {
-  font-family: 'Nunito', sans-serif;
-  background: var(--linen);
-  color: var(--ink);
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-  overflow-x: hidden;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  font-family:'Lato',sans-serif;
+  background:var(--ivory);
+  color:var(--ink);
+  min-height:100vh;
+  min-height:-webkit-fill-available;
+  overflow-x:hidden;
+  /* soft linen grain */
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
 }
 
-h1,h2,h3,h4 { font-family: 'Libre Baskerville', serif; font-weight: 400; }
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:400;}
 
 /* ── Install banner ── */
-#install-banner {
-  background: var(--moss);
-  color: #D8EDCE;
-  padding: 9px 16px;
-  font-size: 0.73rem;
-  text-align: center;
-  letter-spacing: 0.3px;
-  display: none;
-}
-#install-banner strong { color: #E8F8DF; }
+#install-banner{background:var(--peony);color:#FDE8EC;padding:9px 16px;font-size:0.73rem;text-align:center;letter-spacing:0.3px;display:none;}
+#install-banner strong{color:#FFF0F3;}
 
 /* ── Header ── */
 .app-header {
-  background: var(--moss);
-  padding: 16px 20px 12px;
+  background: linear-gradient(135deg, #C06878 0%, #A87898 50%, #8870B0 100%);
+  padding: 18px 20px 14px;
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 50;
-  border-bottom: 2px solid var(--sage);
-  /* subtle botanical texture stripe */
-  background-image: linear-gradient(180deg, rgba(74,103,65,1) 0%, rgba(60,86,52,1) 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 2px 12px rgba(160,80,100,0.25);
 }
 .header-eyebrow {
   font-size: 0.58rem;
   letter-spacing: 3.5px;
   text-transform: uppercase;
-  color: var(--sage-light);
+  color: rgba(255,236,240,0.8);
   margin-bottom: 4px;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 400;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
 }
 .app-header h1 {
-  font-size: 1.75rem;
-  color: var(--linen);
+  font-size: 1.85rem;
+  color: #FFF0F4;
   letter-spacing: 0.5px;
   line-height: 1;
   font-style: italic;
   font-weight: 400;
+  text-shadow: 0 1px 8px rgba(120,50,80,0.3);
 }
 .header-stats {
   display: flex;
@@ -96,395 +95,259 @@ h1,h2,h3,h4 { font-family: 'Libre Baskerville', serif; font-weight: 400; }
   gap: 14px;
   margin-top: 7px;
   font-size: 0.68rem;
-  color: rgba(178,204,168,0.75);
+  color: rgba(255,220,230,0.75);
   letter-spacing: 0.8px;
   text-transform: uppercase;
 }
-.header-stats strong { color: var(--sage-light); }
+.header-stats strong { color: #FFE8EE; }
 
 /* ── Nav ── */
 .nav-bar {
-  background: var(--moss);
+  background: linear-gradient(90deg, #C06878, #A87898, #8870B0);
   display: flex;
-  border-top: 1px solid rgba(138,175,130,0.25);
+  border-top: 1px solid rgba(255,255,255,0.15);
 }
 .nav-btn {
   flex: 1;
-  padding: 9px 4px;
+  padding: 9px 3px;
   background: none;
   border: none;
-  color: rgba(178,204,168,0.5);
-  font-family: 'Nunito', sans-serif;
-  font-size: 0.62rem;
-  letter-spacing: 0.9px;
+  color: rgba(255,220,232,0.5);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.7px;
   text-transform: uppercase;
   cursor: pointer;
   transition: color 0.2s;
-  font-weight: 500;
+  font-weight: 700;
 }
-.nav-btn.active { color: var(--linen); border-top: 2px solid var(--sage-light); margin-top: -1px; }
+.nav-btn.active { color: #FFF0F6; border-top: 2px solid rgba(255,240,246,0.8); margin-top: -1px; }
 .nav-btn:active { opacity: 0.7; }
 
 /* ── Main ── */
 .main { padding: 0 0 100px; max-width: 480px; margin: 0 auto; }
-
-/* ── Pages ── */
-.page { display: none; }
-.page.active { display: block; }
+.page { display: none; } .page.active { display: block; }
 
 .page-header {
   padding: 22px 20px 14px;
   border-bottom: 1px solid var(--border-lt);
   margin-bottom: 18px;
+  position: relative;
 }
-.page-title {
-  font-size: 1.9rem;
-  font-style: italic;
-  color: var(--moss);
+/* subtle floral watermark */
+.page-header::after {
+  content: '\273F';
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  font-size: 2.5rem;
+  color: var(--blush);
+  opacity: 0.18;
   line-height: 1;
 }
+.page-title { font-size: 1.9rem; font-style: italic; color: var(--peony); line-height: 1; }
 .page-sub { font-size: 0.77rem; color: var(--ink-light); margin-top: 5px; line-height: 1.5; }
 
 /* ── Stats strip ── */
 .stats-strip { display: flex; gap: 1px; background: var(--border-lt); margin: 0 0 16px; }
 .stat-pill { flex: 1; background: var(--white); padding: 10px 4px; text-align: center; }
-.stat-pill .n { font-family: 'Libre Baskerville', serif; font-size: 1.45rem; color: var(--moss); display: block; line-height: 1; }
+.stat-pill .n { font-family: 'Playfair Display', serif; font-size: 1.45rem; color: var(--peony); display: block; line-height: 1; }
 .stat-pill .l { font-size: 0.57rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--ink-light); display: block; margin-top: 2px; }
 
 /* ── Progress ── */
 .progress-wrap { padding: 0 20px 14px; }
 .progress-label { display: flex; justify-content: space-between; font-size: 0.73rem; color: var(--ink-light); margin-bottom: 5px; }
 .progress-track { height: 5px; background: var(--border-lt); border-radius: 3px; overflow: hidden; }
-.progress-fill { height: 100%; background: linear-gradient(90deg, var(--moss), var(--sage)); border-radius: 3px; transition: width 0.5s ease; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--blush-deep), var(--lavender)); border-radius: 3px; transition: width 0.5s ease; }
 
 /* ── Filters ── */
 .filter-scroll { display: flex; gap: 7px; overflow-x: auto; padding: 0 20px 10px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 .filter-scroll::-webkit-scrollbar { display: none; }
-.chip {
-  flex-shrink: 0;
-  padding: 5px 13px;
-  border-radius: 20px;
-  font-size: 0.71rem;
-  letter-spacing: 0.2px;
-  border: 1px solid var(--border);
-  background: var(--white);
-  color: var(--ink-mid);
-  cursor: pointer;
-  white-space: nowrap;
-  -webkit-tap-highlight-color: transparent;
-  transition: all 0.15s;
-  font-family: 'Nunito', sans-serif;
-}
-.chip.on { background: var(--moss); color: var(--linen); border-color: var(--moss); }
+.chip { flex-shrink: 0; padding: 5px 13px; border-radius: 20px; font-size: 0.71rem; border: 1px solid var(--border); background: var(--white); color: var(--ink-mid); cursor: pointer; white-space: nowrap; -webkit-tap-highlight-color: transparent; transition: all 0.15s; font-family: 'Lato', sans-serif; }
+.chip.on { background: var(--peony); color: white; border-color: var(--peony); }
 
 /* ── Search ── */
 .search-wrap { padding: 0 20px 10px; }
-.search-input {
-  width: 100%;
-  padding: 10px 14px 10px 36px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-family: 'Nunito', sans-serif;
-  font-size: 0.87rem;
-  background: var(--white);
-  color: var(--ink);
-  outline: none;
-  -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%237A8068' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: 12px center;
-}
-.search-input:focus { border-color: var(--sage); }
+.search-input { width: 100%; padding: 10px 14px 10px 36px; border: 1px solid var(--border); border-radius: 8px; font-family: 'Lato', sans-serif; font-size: 0.87rem; background: var(--white); color: var(--ink); outline: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239A8AA0' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: 12px center; }
+.search-input:focus { border-color: var(--blush); }
 
 /* ── Dress grid ── */
 .dress-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; padding: 0 16px; }
-
-.dress-card {
-  background: var(--white);
-  border: 1px solid var(--border-lt);
-  border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
-  position: relative;
-  -webkit-tap-highlight-color: transparent;
-  transition: transform 0.15s, box-shadow 0.15s;
-  box-shadow: 0 1px 4px var(--shadow);
-}
+.dress-card { background: var(--white); border: 1px solid var(--border-lt); border-radius: 12px; overflow: hidden; cursor: pointer; position: relative; -webkit-tap-highlight-color: transparent; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 2px 8px var(--shadow); }
 .dress-card:active { transform: scale(0.97); }
-
-.dress-photo-wrap {
-  width: 100%;
-  aspect-ratio: 3/4;
-  overflow: hidden;
-  position: relative;
-  background: var(--linen2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+.dress-photo-wrap { width: 100%; aspect-ratio: 3/4; overflow: hidden; position: relative; background: var(--ivory2); display: flex; align-items: center; justify-content: center; }
 .dress-photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
-.dress-no-photo { font-size: 2.2rem; opacity: 0.25; font-style: italic; font-family: 'Libre Baskerville', serif; color: var(--ink-mid); }
-.dress-color-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; }
-
-.dress-info { padding: 9px 10px 11px; }
-.dress-name { font-family: 'Libre Baskerville', serif; font-size: 0.88rem; font-style: italic; color: var(--ink); line-height: 1.2; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dress-no-photo { font-size: 2.2rem; opacity: 0.2; font-style: italic; font-family: 'Playfair Display', serif; color: var(--blush-deep); }
+.dress-color-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 4px; }
+.dress-info { padding: 9px 11px 12px; }
+.dress-name { font-family: 'Playfair Display', serif; font-size: 0.88rem; font-style: italic; color: var(--ink); line-height: 1.2; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .dress-brand { font-size: 0.63rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.6px; }
 .dress-badges { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 6px; }
-.badge { font-size: 0.6rem; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.2px; text-transform: uppercase; font-weight: 600; }
-.badge-keep    { background: var(--sage-pale); color: var(--moss); }
-.badge-sell    { background: var(--clover-pale); color: var(--clover); }
-.badge-donate  { background: var(--lav-pale); color: var(--lavender); }
-.badge-undecided { background: var(--linen2); color: var(--ink-mid); border: 1px solid var(--border); }
-.badge-not     { background: #EAF0F8; color: #4A6A90; }
-.badge-section { background: var(--linen2); color: var(--ink-light); border: 1px solid var(--border-lt); }
+.badge { font-size: 0.6rem; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.2px; text-transform: uppercase; font-weight: 700; }
+.badge-keep     { background: #E8F5E8; color: #3A7A3A; }
+.badge-sell     { background: var(--rose-pale); color: var(--rose); }
+.badge-donate   { background: var(--lav-pale); color: var(--lav-deep); }
+.badge-undecided{ background: var(--ivory2); color: var(--ink-mid); border: 1px solid var(--border); }
+.badge-not      { background: #E8EEF8; color: #4A6A90; }
+.badge-section  { background: var(--dusty-pale); color: var(--mauve); border: 1px solid var(--border-lt); }
+.badge-dw-yes   { background: #1A1A2E; color: #C8B8E8; }
+.badge-dw-near  { background: #2E1A2E; color: #E0C0D8; }
+.badge-dw-no    { background: var(--ivory2); color: var(--ink-mid); border: 1px solid var(--border); }
 
 /* ── FAB ── */
-.fab {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: var(--moss);
-  color: var(--linen);
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(74,103,65,0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 40;
-  -webkit-tap-highlight-color: transparent;
-  transition: transform 0.15s;
-}
+.fab { position: fixed; bottom: 80px; right: 20px; width: 54px; height: 54px; border-radius: 50%; background: linear-gradient(135deg, var(--blush-deep), var(--lav-deep)); color: white; border: none; font-size: 1.5rem; cursor: pointer; box-shadow: 0 4px 16px rgba(180,80,120,0.45); display: flex; align-items: center; justify-content: center; z-index: 40; -webkit-tap-highlight-color: transparent; transition: transform 0.15s; }
 .fab:active { transform: scale(0.92); }
 
 /* ── Empty state ── */
 .empty { text-align: center; padding: 56px 28px; color: var(--ink-light); font-size: 0.88rem; line-height: 1.8; }
-.empty .big { font-size: 1.8rem; display: block; margin-bottom: 10px; opacity: 0.35; font-family: 'Libre Baskerville', serif; font-style: italic; color: var(--moss); }
+.empty .big { font-size: 1.8rem; display: block; margin-bottom: 10px; opacity: 0.4; font-family: 'Playfair Display', serif; font-style: italic; color: var(--blush-deep); }
 
 /* ── Overlays / Sheets ── */
-.overlay { display: none; position: fixed; inset: 0; background: rgba(42,46,30,0.45); z-index: 100; align-items: flex-end; justify-content: center; backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); }
+.overlay { display: none; position: fixed; inset: 0; background: rgba(42,32,48,0.5); z-index: 100; align-items: flex-end; justify-content: center; backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); }
 .overlay.open { display: flex; }
-
-.sheet {
-  background: var(--linen);
-  border-radius: 20px 20px 0 0;
-  width: 100%;
-  max-width: 480px;
-  max-height: 92vh;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 0 0 env(safe-area-inset-bottom, 20px);
-  animation: slideUp 0.26s ease;
-}
+.sheet { background: var(--ivory); border-radius: 22px 22px 0 0; width: 100%; max-width: 480px; max-height: 92vh; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 0 0 env(safe-area-inset-bottom, 20px); animation: slideUp 0.26s ease; }
 @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
-
-.sheet-handle { width: 34px; height: 4px; background: var(--border); border-radius: 2px; margin: 12px auto 0; }
+.sheet-handle { width: 36px; height: 4px; background: var(--border); border-radius: 2px; margin: 12px auto 0; }
 .sheet-header { padding: 14px 20px 0; display: flex; justify-content: space-between; align-items: flex-start; }
-.sheet-title { font-family: 'Libre Baskerville', serif; font-size: 1.55rem; font-style: italic; color: var(--moss); line-height: 1.1; }
-.sheet-close { background: var(--linen2); border: none; width: 28px; height: 28px; border-radius: 50%; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--ink-mid); flex-shrink: 0; margin-top: 4px; }
+.sheet-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-style: italic; color: var(--peony); line-height: 1.1; }
+.sheet-close { background: var(--ivory2); border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--ink-mid); flex-shrink: 0; margin-top: 4px; }
+.sheet-body { padding: 14px 20px 26px; }
 
-.sheet-body { padding: 14px 20px 24px; }
-
-/* ── Form fields ── */
+/* ── Form ── */
 .fgroup { margin-bottom: 13px; }
-.fgroup label { display: block; font-size: 0.67rem; text-transform: uppercase; letter-spacing: 0.9px; color: var(--ink-light); margin-bottom: 4px; font-family: 'Nunito', sans-serif; }
-.fgroup input, .fgroup select, .fgroup textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-family: 'Nunito', sans-serif;
-  font-size: 0.88rem;
-  background: var(--white);
-  color: var(--ink);
-  outline: none;
-  -webkit-appearance: none;
-  transition: border-color 0.18s;
-}
-.fgroup input:focus, .fgroup select:focus, .fgroup textarea:focus { border-color: var(--sage); }
+.fgroup label { display: block; font-size: 0.67rem; text-transform: uppercase; letter-spacing: 0.9px; color: var(--ink-light); margin-bottom: 4px; font-family: 'Lato', sans-serif; }
+.fgroup input, .fgroup select, .fgroup textarea { width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font-family: 'Lato', sans-serif; font-size: 0.88rem; background: var(--white); color: var(--ink); outline: none; -webkit-appearance: none; transition: border-color 0.18s; }
+.fgroup input:focus, .fgroup select:focus, .fgroup textarea:focus { border-color: var(--blush); }
 .fgroup textarea { resize: vertical; min-height: 68px; }
 .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
 
 /* ── Photo upload ── */
 .photo-upload { border: 2px dashed var(--border); border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; margin-bottom: 14px; -webkit-tap-highlight-color: transparent; transition: border-color 0.18s; }
-.photo-upload:active { border-color: var(--sage); }
-.photo-upload .pu-icon { font-size: 1.5rem; display: block; margin-bottom: 5px; opacity: 0.5; }
-.photo-upload .hint { font-size: 0.77rem; color: var(--ink-light); }
+.photo-upload:active { border-color: var(--blush); }
+.photo-upload .hint { font-size: 0.77rem; color: var(--ink-light); margin-top: 6px; }
 .photo-preview-wrap { position: relative; margin-bottom: 14px; }
 .photo-preview-wrap img { width: 100%; max-height: 200px; object-fit: cover; border-radius: 10px; }
-.photo-remove { position: absolute; top: 8px; right: 8px; background: var(--moss); color: white; border: none; border-radius: 50%; width: 24px; height: 24px; font-size: 0.75rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.photo-remove { position: absolute; top: 8px; right: 8px; background: var(--peony); color: white; border: none; border-radius: 50%; width: 26px; height: 26px; font-size: 0.75rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
 
 /* ── Buttons ── */
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 20px; border-radius: 8px; font-family: 'Nunito', sans-serif; font-size: 0.84rem; font-weight: 600; cursor: pointer; border: none; letter-spacing: 0.2px; -webkit-tap-highlight-color: transparent; transition: opacity 0.15s; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 20px; border-radius: 8px; font-family: 'Lato', sans-serif; font-size: 0.84rem; font-weight: 700; cursor: pointer; border: none; letter-spacing: 0.3px; -webkit-tap-highlight-color: transparent; transition: opacity 0.15s; }
 .btn:active { opacity: 0.78; }
-.btn-primary { background: var(--moss); color: var(--linen); }
-.btn-outline { background: transparent; color: var(--moss); border: 1.5px solid var(--moss); }
+.btn-primary { background: linear-gradient(135deg, var(--blush-deep), var(--lav-deep)); color: white; }
+.btn-outline { background: transparent; color: var(--peony); border: 1.5px solid var(--peony); }
 .btn-ghost { background: transparent; color: var(--ink-mid); border: 1px solid var(--border); }
 .btn-sm { padding: 7px 14px; font-size: 0.77rem; }
-.btn-danger { background: transparent; color: #8A2A2A; border: 1px solid #C07070; }
+.btn-danger { background: transparent; color: #8A2A2A; border: 1px solid #C08080; }
 .btn-full { width: 100%; }
 .btn-row { display: flex; gap: 10px; margin-top: 16px; }
 .btn-row .btn { flex: 1; }
 
 /* ── Detail sheet ── */
 .detail-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 10px; margin-bottom: 14px; }
-.detail-no-photo { width: 100%; aspect-ratio: 3/2; border-radius: 10px; margin-bottom: 14px; display: flex; align-items: center; justify-content: center; font-family: 'Libre Baskerville', serif; font-style: italic; font-size: 1rem; color: var(--ink-light); opacity: 0.5; }
-
+.detail-no-photo { width: 100%; aspect-ratio: 3/2; border-radius: 10px; margin-bottom: 14px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1rem; color: var(--ink-light); opacity: 0.5; }
 .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 12px; }
-.detail-item { background: var(--white); border-radius: 7px; padding: 8px 10px; border: 1px solid var(--border-lt); }
+.detail-item { background: var(--white); border-radius: 8px; padding: 8px 10px; border: 1px solid var(--border-lt); }
 .detail-item .dk { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--ink-light); }
 .detail-item .dv { font-size: 0.85rem; margin-top: 1px; }
-
-.detail-notes { background: var(--linen2); border-radius: 8px; padding: 11px 13px; font-size: 0.83rem; font-style: italic; color: var(--ink-mid); margin-bottom: 13px; border-left: 3px solid var(--sage); line-height: 1.6; }
+.detail-notes { background: var(--blush-soft); border-radius: 8px; padding: 11px 13px; font-size: 0.83rem; font-style: italic; color: var(--ink-mid); margin-bottom: 13px; border-left: 3px solid var(--blush); line-height: 1.6; }
 
 /* ── AI buttons ── */
 .ai-btns { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 11px; }
-.ai-btn { padding: 6px 13px; background: var(--ink); color: var(--sage-light); border: none; border-radius: 20px; font-family: 'Nunito', sans-serif; font-size: 0.71rem; cursor: pointer; letter-spacing: 0.2px; -webkit-tap-highlight-color: transparent; font-weight: 500; }
+.ai-btn { padding: 6px 13px; background: var(--ink); color: #F0D8E8; border: none; border-radius: 20px; font-family: 'Lato', sans-serif; font-size: 0.71rem; cursor: pointer; letter-spacing: 0.2px; -webkit-tap-highlight-color: transparent; font-weight: 700; }
 .ai-btn:active { opacity: 0.7; }
-
-.ai-box { background: var(--ink); border-radius: 10px; padding: 16px; color: #E8F0E0; font-size: 0.84rem; line-height: 1.75; white-space: pre-wrap; margin-bottom: 13px; display: none; }
+.ai-box { background: var(--ink); border-radius: 10px; padding: 16px; color: #F5E8F0; font-size: 0.84rem; line-height: 1.75; white-space: pre-wrap; margin-bottom: 13px; display: none; }
 .ai-box.show { display: block; }
-.ai-thinking { color: var(--sage-light); font-style: italic; }
+.ai-thinking { color: #C8A8C0; font-style: italic; }
 
-/* ── Ornamental divider ── */
-.ornament { text-align: center; font-size: 0.68rem; letter-spacing: 5px; margin: 14px 0; color: var(--sage); opacity: 0.7; }
+/* ── Ornament ── */
+.ornament { text-align: center; font-size: 0.9rem; letter-spacing: 6px; margin: 14px 0; color: var(--blush); opacity: 0.5; }
+.section-pad { padding: 0 20px; }
+.section-title-sm { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-style: italic; color: var(--ink); margin-bottom: 10px; }
 
 /* ── Rotation page ── */
-.section-pad { padding: 0 20px; }
+.season-callout { margin: 0 20px 18px; background: linear-gradient(135deg, var(--blush-deep) 0%, var(--lavender) 100%); border-radius: 14px; padding: 18px 20px; color: white; position: relative; overflow: hidden; box-shadow: 0 4px 16px rgba(180,80,120,0.3); }
+.season-callout::before { content: '\273F'; position: absolute; right: 16px; top: 12px; font-size: 3.5rem; opacity: 0.15; line-height: 1; }
+.callout-month { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 1.8px; color: rgba(255,235,245,0.75); margin-bottom: 4px; }
+.callout-label { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-style: italic; color: white; margin-bottom: 4px; }
+.callout-note { font-size: 0.79rem; color: rgba(255,230,240,0.88); line-height: 1.5; }
 
-.season-callout {
-  margin: 0 20px 18px;
-  background: var(--moss);
-  background-image: linear-gradient(135deg, var(--moss) 0%, var(--meadow) 100%);
-  border-radius: 12px;
-  padding: 18px 20px;
-  color: var(--linen);
-  position: relative;
-  overflow: hidden;
-}
-.season-callout::before {
-  content: '';
-  position: absolute;
-  right: -10px; top: -10px;
-  width: 90px; height: 90px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.06);
-}
-.callout-month { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 1.8px; color: var(--sage-light); margin-bottom: 4px; }
-.callout-label { font-family: 'Libre Baskerville', serif; font-size: 1.4rem; font-style: italic; color: var(--linen); margin-bottom: 4px; }
-.callout-note { font-size: 0.78rem; color: rgba(223,240,216,0.85); line-height: 1.5; }
-
-.closet-box { border: 1.5px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 11px; }
-.closet-box-header { padding: 9px 14px; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; font-weight: 600; }
-.closet-main-h { background: #EEF5EB; color: var(--moss); border-bottom: 1px solid var(--border-lt); }
-.closet-storage-h { background: var(--linen2); color: var(--ink-mid); border-bottom: 1px solid var(--border-lt); }
+.closet-box { border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 11px; }
+.closet-box-header { padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; font-weight: 700; }
+.closet-main-h { background: var(--blush-soft); color: var(--blush-deep); border-bottom: 1px solid var(--border-lt); }
+.closet-storage-h { background: var(--lav-soft); color: var(--lav-deep); border-bottom: 1px solid var(--border-lt); }
 .closet-fill { font-size: 0.68rem; font-weight: 400; color: var(--ink-light); }
 .closet-progress { height: 3px; background: var(--border-lt); }
-.closet-progress-fill { height: 100%; background: var(--moss); transition: width 0.4s; }
-.closet-progress-fill-gray { height: 100%; background: var(--sage); transition: width 0.4s; }
+.closet-progress-fill { height: 100%; background: linear-gradient(90deg, var(--blush), var(--lavender)); transition: width 0.4s; }
 .closet-items { padding: 6px 0; max-height: 150px; overflow-y: auto; }
 .closet-item { padding: 5px 14px; font-size: 0.8rem; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-lt); }
 .closet-item:last-child { border-bottom: none; }
 .closet-item .ci-tag { color: var(--ink-light); font-size: 0.7rem; }
 
-.month-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin: 0 20px; }
+.month-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 0 20px; }
 .month-tile { border-radius: 8px; padding: 10px 12px; border: 1px solid var(--border-lt); }
-.month-tile-name { font-size: 0.77rem; font-weight: 600; margin-bottom: 3px; color: var(--ink); }
+.month-tile-name { font-size: 0.77rem; font-weight: 700; margin-bottom: 3px; }
 .month-tile-note { font-size: 0.68rem; color: var(--ink-light); line-height: 1.4; }
-.tile-summer { background: #FBF5E0; border-color: #D4B84A; }
-.tile-fall   { background: #FAF0E8; border-color: #C89060; }
-.tile-winter { background: #EAF0F6; border-color: #7A9EC0; }
-.tile-spring { background: #EBF5E8; border-color: var(--sage); }
+.tile-summer { background: #FDF6E0; border-color: #DFC870; }
+.tile-fall   { background: #FDF0E8; border-color: #D0906A; }
+.tile-winter { background: var(--lav-soft); border-color: var(--lavender); }
+.tile-spring { background: var(--blush-soft); border-color: var(--blush); }
 
 .sections-guide { margin: 0 20px; }
 .section-row { display: flex; align-items: flex-start; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--border-lt); }
 .section-row:last-child { border-bottom: none; }
-.section-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sage); flex-shrink: 0; margin-top: 5px; }
-.section-text-name { font-size: 0.86rem; font-weight: 600; color: var(--ink); }
+.section-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+.section-text-name { font-size: 0.86rem; font-weight: 700; color: var(--ink); }
 .section-text-desc { font-size: 0.74rem; color: var(--ink-light); margin-top: 2px; line-height: 1.4; }
 
 /* ── Wear log ── */
 .wear-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 20px 18px; }
-.wear-card { background: var(--white); border: 1px solid var(--border-lt); border-radius: 10px; padding: 12px 14px; }
-.wear-card h4 { font-family: 'Libre Baskerville', serif; font-size: 0.9rem; margin-bottom: 8px; color: var(--moss); font-style: italic; }
+.wear-card { background: var(--white); border: 1px solid var(--border-lt); border-radius: 12px; padding: 12px 14px; }
+.wear-card h4 { font-family: 'Playfair Display', serif; font-size: 0.9rem; margin-bottom: 8px; color: var(--peony); font-style: italic; }
 .wear-card-row { font-size: 0.77rem; display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid var(--border-lt); }
 .wear-card-row:last-child { border-bottom: none; }
-.wear-card-row .times { color: var(--moss); font-weight: 600; }
+.wear-card-row .times { color: var(--peony); font-weight: 700; }
 .wear-log-list { padding: 0 20px; display: flex; flex-direction: column; gap: 7px; }
 .wear-entry { background: var(--white); border: 1px solid var(--border-lt); border-radius: 8px; padding: 10px 13px; display: flex; align-items: center; gap: 10px; font-size: 0.83rem; }
 .wear-date { font-size: 0.7rem; color: var(--ink-light); min-width: 72px; }
 .wear-name { flex: 1; }
 .wear-brand-sm { font-size: 0.68rem; color: var(--ink-light); }
 
-/* ── AI Stylist page ── */
+/* ── AI Stylist ── */
 .ai-page { padding: 0 20px; }
 .ai-suggestions { display: flex; flex-direction: column; gap: 7px; margin-bottom: 14px; }
-.ai-suggestion {
-  background: var(--white);
-  border: 1px solid var(--border-lt);
-  border-radius: 8px;
-  padding: 11px 14px;
-  font-size: 0.83rem;
-  cursor: pointer;
-  text-align: left;
-  color: var(--ink);
-  font-family: 'Nunito', sans-serif;
-  -webkit-tap-highlight-color: transparent;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: border-color 0.15s, background 0.15s;
-}
-.ai-suggestion:active { border-color: var(--sage); background: var(--linen2); }
-.ai-suggestion .sq { width: 6px; height: 6px; border-radius: 50%; background: var(--sage); flex-shrink: 0; }
-
+.ai-suggestion { background: var(--white); border: 1px solid var(--border-lt); border-radius: 10px; padding: 11px 14px; font-size: 0.83rem; cursor: pointer; text-align: left; color: var(--ink); font-family: 'Lato', sans-serif; -webkit-tap-highlight-color: transparent; display: flex; align-items: center; gap: 10px; transition: border-color 0.15s, background 0.15s; }
+.ai-suggestion:active { border-color: var(--blush); background: var(--blush-soft); }
+.ai-suggestion .sq { width: 7px; height: 7px; border-radius: 50%; background: linear-gradient(135deg, var(--blush), var(--lavender)); flex-shrink: 0; }
 .ai-input-row { display: flex; gap: 8px; margin-bottom: 14px; }
-.ai-input-row input { flex: 1; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font-family: 'Nunito', sans-serif; font-size: 0.86rem; background: var(--white); color: var(--ink); outline: none; -webkit-appearance: none; }
-.ai-input-row input:focus { border-color: var(--sage); }
-
-.ai-response-box { background: var(--ink); border-radius: 12px; padding: 18px 20px; color: #E0EDDA; font-size: 0.86rem; line-height: 1.78; white-space: pre-wrap; display: none; }
+.ai-input-row input { flex: 1; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font-family: 'Lato', sans-serif; font-size: 0.86rem; background: var(--white); color: var(--ink); outline: none; -webkit-appearance: none; }
+.ai-input-row input:focus { border-color: var(--blush); }
+.ai-response-box { background: var(--ink); border-radius: 12px; padding: 18px 20px; color: #F5E8F0; font-size: 0.86rem; line-height: 1.78; white-space: pre-wrap; display: none; }
 .ai-response-box.show { display: block; }
-.ai-response-box h4 { font-family: 'Libre Baskerville', serif; font-size: 1.05rem; color: var(--sage-light); margin-bottom: 10px; font-weight: 400; font-style: italic; }
-.ai-thinking { color: var(--sage-light); font-style: italic; }
-
+.ai-response-box h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #E8B8D0; margin-bottom: 10px; font-weight: 400; font-style: italic; }
 
 /* ── Dark Winter palette ── */
-.badge-dw-yes  { background:#1A1A2E; color:#C8B8E8; }
-.badge-dw-near { background:#2E1A2E; color:#D4A8C8; }
-.badge-dw-no   { background:#F0EBE0; color:#8A7060; border:1px solid var(--border); }
-
-.dw-swatch-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; margin:12px 0; }
-.dw-swatch { aspect-ratio:1; border-radius:6px; cursor:pointer; position:relative; transition:transform 0.15s; border:2px solid transparent; }
-.dw-swatch:active { transform:scale(0.92); }
-.dw-swatch.selected { border-color:var(--ink); }
-.dw-swatch-label { font-size:0.6rem; color:var(--ink-light); text-align:center; margin-top:3px; line-height:1.2; }
-
-.palette-group { margin-bottom:18px; }
-.palette-group-title { font-size:0.68rem; text-transform:uppercase; letter-spacing:1px; color:var(--ink-light); margin-bottom:8px; }
-
-.dw-match-bar { display:flex; gap:8px; align-items:center; margin-bottom:12px; padding:10px 14px; border-radius:8px; border:1px solid var(--border-lt); background:var(--white); }
-.dw-match-dot { width:28px; height:28px; border-radius:50%; flex-shrink:0; border:2px solid rgba(0,0,0,0.1); }
-.dw-match-text { flex:1; font-size:0.82rem; }
-.dw-match-text strong { display:block; font-size:0.85rem; }
-.dw-match-badge { font-size:0.65rem; padding:3px 8px; border-radius:10px; font-weight:600; }
-
-.color-analysis-wrap { background:var(--linen2); border-radius:10px; padding:14px; margin-bottom:14px; }
-.color-analysis-wrap h4 { font-family:'Libre Baskerville',serif; font-style:italic; font-size:0.95rem; color:var(--moss); margin-bottom:10px; font-weight:400; }
-
-.dw-filter-strip { display:flex; gap:7px; padding:0 20px 10px; overflow-x:auto; scrollbar-width:none; }
-.dw-filter-strip::-webkit-scrollbar { display:none; }
-
-.section-title-sm { font-family: 'Libre Baskerville', serif; font-size: 1.05rem; font-style: italic; color: var(--ink); margin-bottom: 10px; }
+.dw-swatch-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 6px; margin: 10px 0 16px; }
+.dw-swatch { aspect-ratio: 1; border-radius: 8px; border: 2px solid transparent; transition: transform 0.12s; }
+.dw-swatch:active { transform: scale(0.9); }
+.dw-swatch-label { font-size: 0.58rem; color: var(--ink-light); text-align: center; margin-top: 2px; line-height: 1.2; }
+.palette-group { margin-bottom: 16px; }
+.palette-group-title { font-size: 0.67rem; text-transform: uppercase; letter-spacing: 1px; color: var(--ink-light); margin-bottom: 6px; }
+.dw-intro { background: var(--lav-soft); border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; font-size: 0.82rem; color: var(--ink-mid); line-height: 1.7; border-left: 3px solid var(--lavender); }
+.dw-intro strong { display: block; font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: var(--lav-deep); margin-bottom: 6px; font-weight: 400; }
+.dw-match-bar { display: flex; align-items: center; gap: 10px; padding: 10px 13px; border-radius: 10px; border: 1px solid var(--border-lt); background: var(--white); cursor: pointer; margin-bottom: 7px; }
+.dw-match-bar:active { background: var(--blush-soft); }
+.dw-match-dot { width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0; border: 2px solid rgba(0,0,0,0.07); }
+.dw-match-info { flex: 1; }
+.dw-match-name { font-size: 0.84rem; font-style: italic; font-family: 'Playfair Display', serif; }
+.dw-match-brand { font-size: 0.68rem; color: var(--ink-light); }
+.dw-match-badge { font-size: 0.6rem; padding: 3px 8px; border-radius: 10px; font-weight: 700; text-transform: uppercase; flex-shrink: 0; }
+.dw-filter-wrap { display: flex; gap: 7px; overflow-x: auto; padding: 0 0 10px; scrollbar-width: none; }
+.dw-filter-wrap::-webkit-scrollbar { display: none; }
 </style>
 </head>
 <body>
 
 <div id="install-banner">
-  In Safari: tap <strong>Share</strong> then <strong>"Add to Home Screen"</strong> to install as an app
+  In Safari: tap <strong>Share</strong> then <strong>"Add to Home Screen"</strong> to install
 </div>
 
 <div class="app-header">
@@ -500,26 +363,23 @@ h1,h2,h3,h4 { font-family: 'Libre Baskerville', serif; font-weight: 400; }
 </div>
 <div class="nav-bar">
   <button class="nav-btn active" data-page="collection" onclick="showPage('collection')">Collection</button>
-  <button class="nav-btn" data-page="rotation" onclick="showPage('rotation')">Rotation</button>
-  <button class="nav-btn" data-page="wearlog" onclick="showPage('wearlog')">Wear Log</button>
-  <button class="nav-btn" data-page="ai" onclick="showPage('ai')">Stylist</button>
-  <button class="nav-btn" data-page="palette" onclick="showPage('palette')">Palette</button>
+  <button class="nav-btn" data-page="rotation"   onclick="showPage('rotation')">Rotation</button>
+  <button class="nav-btn" data-page="wearlog"    onclick="showPage('wearlog')">Wear Log</button>
+  <button class="nav-btn" data-page="ai"         onclick="showPage('ai')">Stylist</button>
+  <button class="nav-btn" data-page="palette"    onclick="showPage('palette')">Palette</button>
 </div>
 
 <div class="main">
 
-<!-- ═══ COLLECTION ═══ -->
+<!-- COLLECTION -->
 <div id="page-collection" class="page active">
   <div class="page-header">
     <div class="page-title">The Collection</div>
-    <div class="page-sub">Tap a dress to view details, log wear, or get styling ideas</div>
+    <div class="page-sub">Tap a dress to view, log wear, or get styling ideas</div>
   </div>
   <div class="stats-strip" id="stats-strip"></div>
   <div class="progress-wrap">
-    <div class="progress-label">
-      <span>Try-on progress</span>
-      <span id="prog-label">0 / 0</span>
-    </div>
+    <div class="progress-label"><span>Try-on progress</span><span id="prog-label">0 / 0</span></div>
     <div class="progress-track"><div class="progress-fill" id="prog-fill" style="width:0%"></div></div>
   </div>
   <div class="search-wrap">
@@ -530,57 +390,47 @@ h1,h2,h3,h4 { font-family: 'Libre Baskerville', serif; font-weight: 400; }
   <div class="dress-grid" id="dress-grid"></div>
   <div id="empty-collection" class="empty" style="display:none">
     <span class="big">No dresses yet</span>
-    Tap the + button to add your first dress.<br>Best done during a try-on session!
+    Tap the + button to add your first dress.
   </div>
 </div>
 
-<!-- ═══ ROTATION ═══ -->
+<!-- ROTATION -->
 <div id="page-rotation" class="page">
   <div class="page-header">
     <div class="page-title">Rotation Plan</div>
-    <div class="page-sub">Houston-optimized &mdash; fall doesn't arrive until October</div>
+    <div class="page-sub">Houston-optimized &mdash; fall doesn&rsquo;t arrive until October</div>
   </div>
   <div class="season-callout" id="current-month-callout"></div>
-  <div class="ornament">&mdash; &bull; &mdash;</div>
+  <div class="ornament">&diams;</div>
   <div class="section-pad" style="margin-bottom:12px">
     <div class="section-title-sm">Your Two Closets</div>
     <div class="closet-box">
-      <div class="closet-box-header closet-main-h">
-        <span>Main Closet</span>
-        <span class="closet-fill" id="main-fill-label">0 / 20</span>
-      </div>
+      <div class="closet-box-header closet-main-h"><span>Main Closet</span><span class="closet-fill" id="main-fill-label">0 / 20</span></div>
       <div class="closet-progress"><div class="closet-progress-fill" id="main-progress" style="width:0%"></div></div>
-      <div class="closet-items" id="main-closet-items">
-        <div style="padding:10px 14px;font-size:0.78rem;color:var(--ink-light)">No kept dresses in main closet yet</div>
-      </div>
+      <div class="closet-items" id="main-closet-items"><div style="padding:10px 14px;font-size:0.78rem;color:var(--ink-light)">No kept dresses in main closet yet</div></div>
     </div>
     <div class="closet-box">
-      <div class="closet-box-header closet-storage-h">
-        <span>Storage Closet</span>
-        <span class="closet-fill" id="storage-fill-label">0 kept</span>
-      </div>
-      <div class="closet-items" id="storage-closet-items">
-        <div style="padding:10px 14px;font-size:0.78rem;color:var(--ink-light)">No kept dresses in storage yet</div>
-      </div>
+      <div class="closet-box-header closet-storage-h"><span>Storage Closet</span><span class="closet-fill" id="storage-fill-label">0 kept</span></div>
+      <div class="closet-items" id="storage-closet-items"><div style="padding:10px 14px;font-size:0.78rem;color:var(--ink-light)">No kept dresses in storage yet</div></div>
     </div>
   </div>
-  <div class="ornament">&mdash; &bull; &mdash;</div>
+  <div class="ornament">&diams;</div>
   <div class="section-pad" style="margin-bottom:10px"><div class="section-title-sm">Hanging Organizer Sections</div></div>
   <div class="sections-guide section-pad">
-    <div class="section-row"><div class="section-dot" style="background:var(--ink)"></div><div><div class="section-text-name">All Black</div><div class="section-text-desc">Wedding coordination essentials &mdash; always accessible in main closet</div></div></div>
-    <div class="section-row"><div class="section-dot" style="background:var(--lavender)"></div><div><div class="section-text-name">Formal</div><div class="section-text-desc">Galas, holiday events &mdash; keep in storage, pull when needed</div></div></div>
-    <div class="section-row"><div class="section-dot" style="background:#7A9EC0"></div><div><div class="section-text-name">Winter / Long Sleeve</div><div class="section-text-desc">Oct&ndash;Feb; rotate to storage by early March</div></div></div>
-    <div class="section-row"><div class="section-dot" style="background:var(--sage)"></div><div><div class="section-text-name">Spring / Summer</div><div class="section-text-desc">Your workhorse section &mdash; always in main closet Mar&ndash;Sep</div></div></div>
-    <div class="section-row"><div class="section-dot" style="background:var(--clover)"></div><div><div class="section-text-name">Work / Casual</div><div class="section-text-desc">Everyday versatile picks to fill remaining main closet spots</div></div></div>
-    <div class="section-row"><div class="section-dot" style="background:var(--gold, #B89A40)"></div><div><div class="section-text-name">Occasion</div><div class="section-text-desc">Date nights, birthdays, rehearsal dinners</div></div></div>
+    <div class="section-row"><div class="section-dot" style="background:var(--ink)"></div><div><div class="section-text-name">All Black</div><div class="section-text-desc">Wedding coordination essentials &mdash; always in main closet</div></div></div>
+    <div class="section-row"><div class="section-dot" style="background:var(--lavender)"></div><div><div class="section-text-name">Formal</div><div class="section-text-desc">Galas and holiday events &mdash; keep in storage, pull when needed</div></div></div>
+    <div class="section-row"><div class="section-dot" style="background:#90A8C8"></div><div><div class="section-text-name">Winter / Long Sleeve</div><div class="section-text-desc">Oct&ndash;Feb; rotate to storage by early March</div></div></div>
+    <div class="section-row"><div class="section-dot" style="background:var(--blush)"></div><div><div class="section-text-name">Spring / Summer</div><div class="section-text-desc">Your workhorse section &mdash; always in main closet Mar&ndash;Sep</div></div></div>
+    <div class="section-row"><div class="section-dot" style="background:var(--dusty)"></div><div><div class="section-text-name">Work / Casual</div><div class="section-text-desc">Everyday versatile picks for remaining main closet spots</div></div></div>
+    <div class="section-row"><div class="section-dot" style="background:#C0A858"></div><div><div class="section-text-name">Occasion</div><div class="section-text-desc">Date nights, birthdays, rehearsal dinners</div></div></div>
   </div>
-  <div class="ornament" style="margin:16px 0 12px">&mdash; &bull; &mdash;</div>
+  <div class="ornament" style="margin:16px 0 12px">&diams;</div>
   <div class="section-pad" style="margin-bottom:10px"><div class="section-title-sm">Houston Annual Calendar</div></div>
   <div class="month-grid" id="month-grid"></div>
   <div style="height:20px"></div>
 </div>
 
-<!-- ═══ WEAR LOG ═══ -->
+<!-- WEAR LOG -->
 <div id="page-wearlog" class="page">
   <div class="page-header">
     <div class="page-title">Wear Log</div>
@@ -588,14 +438,14 @@ h1,h2,h3,h4 { font-family: 'Libre Baskerville', serif; font-weight: 400; }
   </div>
   <div class="wear-summary">
     <div class="wear-card"><h4>Most Worn</h4><div id="most-worn-list"><div style="font-size:0.76rem;color:var(--ink-light)">Log wears to see your favorites</div></div></div>
-    <div class="wear-card"><h4>Kept, Never Worn</h4><div id="never-worn-list"><div style="font-size:0.76rem;color:var(--ink-light)">Everything's been worn!</div></div></div>
+    <div class="wear-card"><h4>Kept, Never Worn</h4><div id="never-worn-list"><div style="font-size:0.76rem;color:var(--ink-light)">Everything has been worn!</div></div></div>
   </div>
   <div class="wear-log-list" id="wear-log-list">
-    <div class="empty"><span class="big">No entries yet</span>Open a dress and tap "Log Wear Today" to start tracking.</div>
+    <div class="empty"><span class="big">No entries yet</span>Open a dress and tap "Log Wear Today" to start.</div>
   </div>
 </div>
 
-<!-- ═══ AI STYLIST ═══ -->
+<!-- AI STYLIST -->
 <div id="page-ai" class="page">
   <div class="page-header">
     <div class="page-title">Your Stylist</div>
@@ -615,54 +465,42 @@ h1,h2,h3,h4 { font-family: 'Libre Baskerville', serif; font-weight: 400; }
   </div>
 </div>
 
-
-<!-- ═══ PALETTE PAGE ═══ -->
+<!-- DARK WINTER PALETTE -->
 <div id="page-palette" class="page">
   <div class="page-header">
-    <div class="page-title">Dark Winter Palette</div>
-    <div class="page-sub">Your color season &mdash; rich, cool, and high-contrast. Use this to evaluate every dress.</div>
+    <div class="page-title">Dark Winter</div>
+    <div class="page-sub">Your color season &mdash; rich, cool, and high-contrast</div>
   </div>
   <div style="padding:0 20px">
-
-    <div class="color-analysis-wrap">
-      <h4>What is Dark Winter?</h4>
-      <div style="font-size:0.82rem;color:var(--ink-mid);line-height:1.7">
-        Dark Winter sits at the cool-dark crossroads of Winter and Autumn. Your best colors are deeply saturated, cool-to-neutral undertoned, and high-contrast. Think midnight navy, true black, icy white, burgundy, forest green, plum, and deep jewel tones. Warm muted earth tones and pastels tend to wash you out.
-      </div>
+    <div class="dw-intro">
+      <strong>What is Dark Winter?</strong>
+      Dark Winter sits at the cool-dark crossroads of Winter and Autumn. Your best colors are deeply saturated, cool-to-neutral undertoned, and high-contrast. Think midnight navy, true black, icy white, burgundy, forest green, plum, and deep jewel tones. Warm muted earth tones and pastels tend to wash you out.
     </div>
-
     <div class="palette-group">
-      <div class="palette-group-title">Your Best Colors &mdash; Wear freely</div>
+      <div class="palette-group-title">Best colors &mdash; wear freely</div>
       <div class="dw-swatch-grid" id="dw-best-swatches"></div>
     </div>
-
     <div class="palette-group">
       <div class="palette-group-title">Use with care &mdash; depends on styling</div>
       <div class="dw-swatch-grid" id="dw-ok-swatches"></div>
     </div>
-
     <div class="palette-group">
       <div class="palette-group-title">Avoid &mdash; tend to wash out Dark Winter</div>
       <div class="dw-swatch-grid" id="dw-avoid-swatches"></div>
     </div>
-
-    <div class="ornament">&mdash; &bull; &mdash;</div>
-
-    <div class="section-title-sm" style="margin-bottom:10px">Your Collection by Palette Match</div>
-    <div class="dw-filter-strip">
-      <button class="chip on" id="dw-filter-all" onclick="setDWFilter('all')">All dresses</button>
-      <button class="chip" id="dw-filter-yes" onclick="setDWFilter('yes')">In palette</button>
-      <button class="chip" id="dw-filter-near" onclick="setDWFilter('near')">Close match</button>
-      <button class="chip" id="dw-filter-no" onclick="setDWFilter('no')">Outside palette</button>
-      <button class="chip" id="dw-filter-unset" onclick="setDWFilter('unset')">Not assessed</button>
+    <div class="ornament">&diams;</div>
+    <div class="section-title-sm" style="margin-bottom:10px">Your collection by palette match</div>
+    <div class="dw-filter-wrap">
+      <button class="chip on" id="dw-f-all"   onclick="setDWFilter('all')">All</button>
+      <button class="chip"    id="dw-f-yes"   onclick="setDWFilter('yes')">In palette</button>
+      <button class="chip"    id="dw-f-near"  onclick="setDWFilter('near')">Close match</button>
+      <button class="chip"    id="dw-f-no"    onclick="setDWFilter('no')">Outside palette</button>
+      <button class="chip"    id="dw-f-unset" onclick="setDWFilter('unset')">Not assessed</button>
     </div>
-    <div id="dw-dress-list" style="padding:0 20px;display:flex;flex-direction:column;gap:8px;margin-bottom:20px"></div>
-
-    <div style="padding:0 20px 8px">
-      <div class="section-title-sm" style="margin-bottom:8px">Ask the Stylist about your palette</div>
-      <button class="btn btn-primary btn-full" onclick="askPaletteAdvice()">Get personalized Dark Winter advice</button>
-    </div>
-    <div class="ai-response-box" id="palette-ai-box" style="margin:10px 20px 0">
+    <div id="dw-dress-list" style="margin-bottom:16px"></div>
+    <div class="section-title-sm" style="margin-bottom:8px">Ask the stylist</div>
+    <button class="btn btn-primary btn-full" onclick="askPaletteAdvice()">Get personalized Dark Winter advice</button>
+    <div class="ai-response-box" id="palette-ai-box" style="margin-top:12px">
       <h4>Your Stylist Says</h4>
       <div id="palette-ai-text"></div>
     </div>
@@ -672,11 +510,11 @@ h1,h2,h3,h4 { font-family: 'Libre Baskerville', serif; font-weight: 400; }
 
 </div><!-- /.main -->
 
-<button class="fab" onclick="openAdd()" title="Add a dress">+</button>
+<button class="fab" onclick="openAdd()">+</button>
 
-<!-- ═══ ADD / EDIT SHEET ═══ -->
+<!-- ADD / EDIT SHEET -->
 <div class="overlay" id="form-overlay" onclick="closeFormIfBg(event)">
-  <div class="sheet" id="form-sheet">
+  <div class="sheet">
     <div class="sheet-handle"></div>
     <div class="sheet-header">
       <div class="sheet-title" id="form-title">New Dress</div>
@@ -685,98 +523,48 @@ h1,h2,h3,h4 { font-family: 'Libre Baskerville', serif; font-weight: 400; }
     <div class="sheet-body">
       <input type="hidden" id="f-id">
       <div id="photo-upload-area" class="photo-upload" onclick="document.getElementById('f-photo-input').click()">
-        <span class="pu-icon">&#9654;</span>
-        <div class="hint">Tap to add a photo &mdash; great to do during try-on sessions</div>
+        <div style="font-size:1.5rem;opacity:0.35;color:var(--blush-deep)">&#9654;</div>
+        <div class="hint">Tap to add a photo &mdash; great during try-on sessions</div>
       </div>
       <div id="photo-preview-wrap" class="photo-preview-wrap" style="display:none">
         <img id="f-photo-preview" src="" alt="">
         <button class="photo-remove" onclick="removePhoto()">&#x2715;</button>
       </div>
       <input type="file" id="f-photo-input" accept="image/*" style="display:none" onchange="handlePhoto(this)">
-
-      <div class="fgroup">
-        <label>Dress name / nickname</label>
-        <input id="f-name" type="text" placeholder="e.g. Cherry Blossom Swing">
+      <div class="fgroup"><label>Dress name / nickname</label><input id="f-name" type="text" placeholder="e.g. Cherry Blossom Swing"></div>
+      <div class="frow">
+        <div class="fgroup"><label>Brand</label><input id="f-brand" type="text" placeholder="PinUp Girl&hellip;"></div>
+        <div class="fgroup"><label>Color accent</label><input id="f-color" type="color" value="#E8A0A8" style="height:42px;padding:4px 6px;cursor:pointer"></div>
       </div>
       <div class="frow">
-        <div class="fgroup">
-          <label>Brand</label>
-          <input id="f-brand" type="text" placeholder="PinUp Girl&hellip;">
+        <div class="fgroup"><label>Fabric</label>
+          <select id="f-fabric"><option value="">Select&hellip;</option><option>Cotton</option><option>Linen</option><option>Cotton/Linen blend</option><option>Polyester</option><option>Rayon</option><option>Chiffon</option><option>Velvet</option><option>Denim</option><option>Other</option></select>
         </div>
-        <div class="fgroup">
-          <label>Color accent</label>
-          <input id="f-color" type="color" value="#8AAF82" style="height:42px;padding:4px 6px;cursor:pointer">
+        <div class="fgroup"><label>Length</label>
+          <select id="f-length"><option value="">Select&hellip;</option><option>Mini</option><option>Knee-length</option><option>Midi</option><option>Maxi</option></select>
         </div>
       </div>
       <div class="frow">
-        <div class="fgroup">
-          <label>Fabric</label>
-          <select id="f-fabric">
-            <option value="">Select&hellip;</option>
-            <option>Cotton</option><option>Linen</option><option>Cotton/Linen blend</option>
-            <option>Polyester</option><option>Rayon</option><option>Chiffon</option>
-            <option>Velvet</option><option>Denim</option><option>Other</option>
-          </select>
+        <div class="fgroup"><label>Season</label>
+          <select id="f-season"><option value="">Select&hellip;</option><option>Spring</option><option>Summer</option><option>Fall</option><option>Winter</option><option>Year-round</option></select>
         </div>
-        <div class="fgroup">
-          <label>Length</label>
-          <select id="f-length">
-            <option value="">Select&hellip;</option>
-            <option>Mini</option><option>Knee-length</option><option>Midi</option><option>Maxi</option>
-          </select>
+        <div class="fgroup"><label>Section</label>
+          <select id="f-section"><option value="">Select&hellip;</option><option>All Black</option><option>Formal</option><option>Winter/Long Sleeve</option><option>Spring/Summer</option><option>Work/Casual</option><option>Occasion</option></select>
         </div>
       </div>
       <div class="frow">
-        <div class="fgroup">
-          <label>Season</label>
-          <select id="f-season">
-            <option value="">Select&hellip;</option>
-            <option>Spring</option><option>Summer</option><option>Fall</option>
-            <option>Winter</option><option>Year-round</option>
-          </select>
+        <div class="fgroup"><label>Location</label>
+          <select id="f-location"><option>Main Closet</option><option>Storage Closet</option></select>
         </div>
-        <div class="fgroup">
-          <label>Section</label>
-          <select id="f-section">
-            <option value="">Select&hellip;</option>
-            <option>All Black</option><option>Formal</option><option>Winter/Long Sleeve</option>
-            <option>Spring/Summer</option><option>Work/Casual</option><option>Occasion</option>
-          </select>
+        <div class="fgroup"><label>Decision</label>
+          <select id="f-status"><option>Not tried yet</option><option>Keep</option><option>Sell</option><option>Donate</option><option>Undecided</option></select>
         </div>
       </div>
-      <div class="frow">
-        <div class="fgroup">
-          <label>Location</label>
-          <select id="f-location">
-            <option>Main Closet</option><option>Storage Closet</option>
-          </select>
-        </div>
-        <div class="fgroup">
-          <label>Decision</label>
-          <select id="f-status">
-            <option>Not tried yet</option><option>Keep</option>
-            <option>Sell</option><option>Donate</option><option>Undecided</option>
-          </select>
-        </div>
+      <div class="fgroup"><label>Dark Winter palette match</label>
+        <select id="f-colormatch"><option value="">Not assessed yet</option><option value="yes">In palette &mdash; wear freely</option><option value="near">Close match &mdash; use with care</option><option value="no">Outside palette &mdash; consider selling</option></select>
       </div>
-
-      <div class="fgroup">
-        <label>Dark Winter palette match</label>
-        <select id="f-colormatch">
-          <option value="">Not assessed yet</option>
-          <option value="yes">In palette &mdash; wear freely</option>
-          <option value="near">Close match &mdash; use with care</option>
-          <option value="no">Outside palette &mdash; consider selling</option>
-        </select>
-      </div>
-      <div class="fgroup">
-        <label>Fit notes</label>
-        <input id="f-fit" type="text" placeholder="Great / Too snug / Runs large&hellip;">
-      </div>
-      <div class="fgroup">
-        <label>Notes</label>
-        <textarea id="f-notes" placeholder="Styling ideas, occasions, memories&hellip;"></textarea>
-      </div>
+      <div class="fgroup"><label>Fit notes</label><input id="f-fit" type="text" placeholder="Great / Too snug / Runs large&hellip;"></div>
+      <div class="fgroup"><label>Notes</label><textarea id="f-notes" placeholder="Styling ideas, occasions, memories&hellip;"></textarea></div>
       <div class="btn-row">
         <button class="btn btn-ghost" onclick="closeForm()">Cancel</button>
         <button class="btn btn-primary" onclick="saveDress()">Save to Archive</button>
@@ -786,9 +574,9 @@ h1,h2,h3,h4 { font-family: 'Libre Baskerville', serif; font-weight: 400; }
   </div>
 </div>
 
-<!-- ═══ DETAIL SHEET ═══ -->
+<!-- DETAIL SHEET -->
 <div class="overlay" id="detail-overlay" onclick="closeDetailIfBg(event)">
-  <div class="sheet" id="detail-sheet">
+  <div class="sheet">
     <div class="sheet-handle"></div>
     <div class="sheet-header">
       <div class="sheet-title" id="d-title">Dress</div>
@@ -800,8 +588,8 @@ h1,h2,h3,h4 { font-family: 'Libre Baskerville', serif; font-weight: 400; }
       <div id="d-notes" class="detail-notes" style="display:none"></div>
       <div class="ai-btns">
         <button class="ai-btn" onclick="dressAI('style')">Style Ideas</button>
-        <button class="ai-btn" onclick="dressAI('color')">Dark Winter match?</button>
         <button class="ai-btn" onclick="dressAI('rotate')">Rotation Advice</button>
+        <button class="ai-btn" onclick="dressAI('color')">Dark Winter match?</button>
         <button class="ai-btn" onclick="dressAI('decide')">Keep or Sell?</button>
       </div>
       <div class="ai-box" id="d-ai-box"></div>
@@ -814,421 +602,353 @@ h1,h2,h3,h4 { font-family: 'Libre Baskerville', serif; font-weight: 400; }
 </div>
 
 <script>
-// ═══ DATA ═══
-const STORE_KEY = 'dress_archive_v2';
-function load() { try { return JSON.parse(localStorage.getItem(STORE_KEY)) || []; } catch { return []; } }
+// DATA
+const STORE_KEY = 'dress_archive_v3';
+function load() { try { return JSON.parse(localStorage.getItem(STORE_KEY)) || []; } catch(e) { return []; } }
 function save(d) { localStorage.setItem(STORE_KEY, JSON.stringify(d)); }
-
 let dresses = load();
-
 if (dresses.length === 0) {
   dresses = [
-    { id:1, name:"Cherry Blossom Swing", colorMatch:"near", brand:"PinUp Girl Clothing", fabric:"Cotton", season:"Spring", section:"Spring/Summer", length:"Knee-length", location:"Main Closet", status:"Keep", color:"#C4909A", notes:"Favorite spring dress — fits perfectly", wornDates:["2024-04-12","2024-05-03"], photo:null, fit:"Great" },
-    { id:2, name:"Midnight Pencil", colorMatch:"yes", brand:"Collectif", fabric:"Polyester", season:"Year-round", section:"All Black", length:"Knee-length", location:"Main Closet", status:"Keep", color:"#404040", notes:"Essential for wedding coordinating", wornDates:["2024-06-15"], photo:null, fit:"Great" },
-    { id:3, name:"Linen Sundress", colorMatch:"near", brand:"Madewell", fabric:"Linen", season:"Summer", section:"Spring/Summer", length:"Midi", location:"Main Closet", status:"Keep", color:"#C0A870", notes:"Super comfortable for Houston summers", wornDates:["2024-07-04","2024-08-01","2024-08-20"], photo:null, fit:"Great" },
-    { id:4, name:"Velvet Evening Gown", colorMatch:"yes", brand:"Bernie Dexter", fabric:"Velvet", season:"Winter", section:"Formal", length:"Maxi", location:"Storage Closet", status:"Keep", color:"#6A4A8A", notes:"Holiday parties and galas", wornDates:["2023-12-20"], photo:null, fit:"Slightly snug" },
-    { id:5, name:"Strawberry Fields", colorMatch:"no", brand:"Emily and Fin", fabric:"Cotton", season:"Summer", section:"Spring/Summer", length:"Midi", location:"Main Closet", status:"Undecided", color:"#C05A5A", notes:"Love the print but runs large", wornDates:[], photo:null, fit:"Too big" },
-    { id:6, name:"Wrap Floral", colorMatch:"", brand:"Som De Flor", fabric:"Cotton/Linen blend", season:"Spring", section:"Spring/Summer", length:"Maxi", location:"Storage Closet", status:"Not tried yet", color:"#7AAA80", notes:"", wornDates:[], photo:null, fit:"" },
+    { id:1, name:"Cherry Blossom Swing", brand:"PinUp Girl Clothing", fabric:"Cotton", season:"Spring", section:"Spring/Summer", length:"Knee-length", location:"Main Closet", status:"Keep", color:"#C4909A", colorMatch:"near", notes:"Favorite spring dress", wornDates:["2024-04-12","2024-05-03"], photo:null, fit:"Great" },
+    { id:2, name:"Midnight Pencil", brand:"Collectif", fabric:"Polyester", season:"Year-round", section:"All Black", length:"Knee-length", location:"Main Closet", status:"Keep", color:"#404040", colorMatch:"yes", notes:"Essential for wedding coordinating", wornDates:["2024-06-15"], photo:null, fit:"Great" },
+    { id:3, name:"Linen Sundress", brand:"Madewell", fabric:"Linen", season:"Summer", section:"Spring/Summer", length:"Midi", location:"Main Closet", status:"Keep", color:"#C0A870", colorMatch:"near", notes:"Comfortable for Houston summers", wornDates:["2024-07-04","2024-08-01","2024-08-20"], photo:null, fit:"Great" },
+    { id:4, name:"Velvet Evening Gown", brand:"Bernie Dexter", fabric:"Velvet", season:"Winter", section:"Formal", length:"Maxi", location:"Storage Closet", status:"Keep", color:"#6A4A8A", colorMatch:"yes", notes:"Holiday parties and galas", wornDates:["2023-12-20"], photo:null, fit:"Slightly snug" },
+    { id:5, name:"Strawberry Fields", brand:"Emily and Fin", fabric:"Cotton", season:"Summer", section:"Spring/Summer", length:"Midi", location:"Main Closet", status:"Undecided", color:"#C05A5A", colorMatch:"no", notes:"Love the print but runs large", wornDates:[], photo:null, fit:"Too big" },
+    { id:6, name:"Wrap Floral", brand:"Som De Flor", fabric:"Cotton/Linen blend", season:"Spring", section:"Spring/Summer", length:"Maxi", location:"Storage Closet", status:"Not tried yet", color:"#A888C0", colorMatch:"", notes:"", wornDates:[], photo:null, fit:"" },
   ];
   save(dresses);
 }
 
-// ═══ STATE ═══
-let currentPage = 'collection';
-let statusFilter = 'All';
-let sectionFilter = 'All';
-let editingId = null;
-let viewingId = null;
-let currentPhoto = null;
-
+// STATE
+let statusFilter = 'All', sectionFilter = 'All', dwFilter = 'all';
+let editingId = null, viewingId = null, currentPhoto = null;
 const STATUSES = ['All','Not tried yet','Keep','Sell','Donate','Undecided'];
 const SECTIONS = ['All','All Black','Formal','Winter/Long Sleeve','Spring/Summer','Work/Casual','Occasion'];
-
-const HOUSTON = {
-  'March':    { season:'spring', label:'Spring Transition',  note:'Pull florals and light cotton from storage' },
-  'April':    { season:'spring', label:'Full Spring',        note:'Main closet: full spring/summer rotation' },
-  'May':      { season:'summer', label:'Early Summer',       note:'Swap to linen and breezy cottons' },
-  'June':     { season:'summer', label:'Hot Season',         note:'Peak heat — lightest fabrics only up front' },
-  'July':     { season:'summer', label:'Peak Summer',        note:'Pure cotton and linen — nothing else works' },
-  'August':   { season:'summer', label:'Late Summer',        note:'Still hot. No changes needed.' },
-  'September':{ season:'summer', label:'Fake Fall',          note:'Still summer clothes — ignore the calendar' },
-  'October':  { season:'fall',   label:'Fall (Finally)',     note:'Begin rotating in longer sleeves and midis' },
-  'November': { season:'fall',   label:'Deep Fall',          note:'Pull winter/long sleeve section forward' },
-  'December': { season:'winter', label:'Mild Winter',        note:'Winter section active; summer into storage' },
-  'January':  { season:'winter', label:'Winter',             note:'Black and formal ready; winter dresses up front' },
-  'February': { season:'winter', label:'Pre-Spring',         note:'Houston warms fast — start eyeing spring pieces' },
-};
-const TILE_CLASS = { spring:'tile-spring', summer:'tile-summer', fall:'tile-fall', winter:'tile-winter' };
-
-// ═══ NAV ═══
-function showPage(p) {
-  currentPage = p;
-  document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
-  document.getElementById('page-'+p).classList.add('active');
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.page===p));
-  if (p==='rotation') renderRotation();
-  if (p==='wearlog')  renderWearLog();
-  if (p==='palette')  renderPalette();
-}
-
-// ═══ HEADER ═══
-function updateHeader() {
-  const total = dresses.length;
-  const kept  = dresses.filter(d=>d.status==='Keep').length;
-  const tried = dresses.filter(d=>d.status!=='Not tried yet').length;
-  const pct   = total ? Math.round((tried/total)*100) : 0;
-  document.getElementById('hd-total').textContent = total;
-  document.getElementById('hd-keep').textContent  = kept;
-  document.getElementById('hd-tried').textContent = pct;
-}
-
-// ═══ COLLECTION ═══
 const STATUS_BADGE = { 'Keep':'badge-keep','Sell':'badge-sell','Donate':'badge-donate','Undecided':'badge-undecided','Not tried yet':'badge-not' };
 const STATUS_LABEL = { 'Keep':'Keep','Sell':'Sell','Donate':'Donate','Undecided':'Undecided','Not tried yet':'Not tried' };
+const DW_LABEL = { yes:'In palette', near:'Close match', no:'Outside palette', '':'Not assessed' };
+const DW_BADGE = { yes:'badge-dw-yes', near:'badge-dw-near', no:'badge-dw-no', '':'badge-undecided' };
+const HOUSTON = {
+  'March':    {season:'spring',label:'Spring Transition', note:'Pull florals and light cotton from storage'},
+  'April':    {season:'spring',label:'Full Spring',       note:'Main closet: full spring/summer rotation'},
+  'May':      {season:'summer',label:'Early Summer',      note:'Swap to linen and breezy cottons'},
+  'June':     {season:'summer',label:'Hot Season',        note:'Peak heat \u2014 lightest fabrics only up front'},
+  'July':     {season:'summer',label:'Peak Summer',       note:'Pure cotton and linen \u2014 nothing else works'},
+  'August':   {season:'summer',label:'Late Summer',       note:'Still hot. No changes needed.'},
+  'September':{season:'summer',label:'Fake Fall',         note:'Still summer clothes \u2014 ignore the calendar'},
+  'October':  {season:'fall',  label:'Fall (Finally)',    note:'Begin rotating in longer sleeves and midis'},
+  'November': {season:'fall',  label:'Deep Fall',         note:'Pull winter/long sleeve section forward'},
+  'December': {season:'winter',label:'Mild Winter',       note:'Winter section active; summer into storage'},
+  'January':  {season:'winter',label:'Winter',            note:'Black and formal ready; winter dresses up front'},
+  'February': {season:'winter',label:'Pre-Spring',        note:'Houston warms fast \u2014 start eyeing spring pieces'},
+};
+const TILE_CLASS = {spring:'tile-spring',summer:'tile-summer',fall:'tile-fall',winter:'tile-winter'};
+const DW_BEST  = [{hex:'#0A0A0A',name:'True Black'},{hex:'#FAFAFA',name:'Icy White'},{hex:'#1B1B3A',name:'Midnight Navy'},{hex:'#6B0F1A',name:'Burgundy'},{hex:'#1A3A2A',name:'Forest Green'},{hex:'#4A0E4E',name:'Deep Plum'},{hex:'#1C3A5E',name:'Dark Teal'},{hex:'#8B0000',name:'True Red'},{hex:'#2C1654',name:'Deep Violet'},{hex:'#1A4A3A',name:'Emerald'},{hex:'#3D0C02',name:'Dark Choc.'},{hex:'#C0C0C0',name:'Silver'}];
+const DW_OK    = [{hex:'#722F37',name:'Wine'},{hex:'#2E4A7A',name:'Royal Blue'},{hex:'#4A2040',name:'Mauve'},{hex:'#8B4513',name:'Cool Rust'},{hex:'#556B2F',name:'Dark Olive'},{hex:'#B8860B',name:'Dark Gold'}];
+const DW_AVOID = [{hex:'#F5DEB3',name:'Wheat'},{hex:'#FFDAB9',name:'Peach'},{hex:'#98FB98',name:'Pale Green'},{hex:'#FFB6C1',name:'Light Pink'},{hex:'#DEB887',name:'Burlywood'},{hex:'#F0E68C',name:'Khaki'}];
 
+// NAV
+function showPage(p) {
+  document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
+  document.getElementById('page-' + p).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.page === p));
+  if (p === 'rotation') renderRotation();
+  if (p === 'wearlog')  renderWearLog();
+  if (p === 'palette')  renderPalette();
+}
+
+// HEADER
+function updateHeader() {
+  const total = dresses.length, kept = dresses.filter(d => d.status === 'Keep').length;
+  const tried = dresses.filter(d => d.status !== 'Not tried yet').length;
+  document.getElementById('hd-total').textContent = total;
+  document.getElementById('hd-keep').textContent  = kept;
+  document.getElementById('hd-tried').textContent = total ? Math.round((tried/total)*100) : 0;
+}
+
+// COLLECTION
 function renderStats() {
-  const c = { Total:dresses.length };
-  STATUSES.slice(1).forEach(s => c[s]=dresses.filter(d=>d.status===s).length);
+  const c = {Total:dresses.length};
+  STATUSES.slice(1).forEach(s => c[s] = dresses.filter(d => d.status === s).length);
   document.getElementById('stats-strip').innerHTML =
     [['Total',c.Total],['Keep',c.Keep],['Sell',c.Sell],['Donate',c.Donate],['?',c.Undecided],['Untried',c['Not tried yet']]]
-    .map(([l,n])=>`<div class="stat-pill"><span class="n">${n}</span><span class="l">${l}</span></div>`).join('');
+    .map(([l,n]) => '<div class="stat-pill"><span class="n">' + n + '</span><span class="l">' + l + '</span></div>').join('');
 }
-
 function renderFilters() {
   document.getElementById('status-filters').innerHTML =
-    STATUSES.map(s=>`<button class="chip ${statusFilter===s?'on':''}" onclick="setStatusFilter('${s}')">${s}</button>`).join('');
+    STATUSES.map(s => '<button class="chip ' + (statusFilter===s?'on':'') + '" onclick="setStatusFilter(\'' + s + '\')">' + s + '</button>').join('');
   document.getElementById('section-filters').innerHTML =
-    SECTIONS.map(s=>`<button class="chip ${sectionFilter===s?'on':''}" onclick="setSectionFilter('${s}')">${s.replace('/','&#x2F;')}</button>`).join('');
+    SECTIONS.map(s => '<button class="chip ' + (sectionFilter===s?'on':'') + '" onclick="setSectionFilter(\'' + s.replace(/'/g,"\\'") + '\')">' + s + '</button>').join('');
 }
-
-function setStatusFilter(s) { statusFilter=s; renderGrid(); }
-function setSectionFilter(s) { sectionFilter=s; renderGrid(); }
-
+function setStatusFilter(s) { statusFilter = s; renderGrid(); }
+function setSectionFilter(s) { sectionFilter = s; renderGrid(); }
 function renderGrid() {
   renderStats(); renderFilters(); updateHeader();
   const q = document.getElementById('search-input').value.toLowerCase();
   const filtered = dresses.filter(d => {
-    if (statusFilter!=='All' && d.status!==statusFilter) return false;
-    if (sectionFilter!=='All' && d.section!==sectionFilter) return false;
-    if (q && !`${d.name} ${d.brand} ${d.notes}`.toLowerCase().includes(q)) return false;
+    if (statusFilter !== 'All' && d.status !== statusFilter) return false;
+    if (sectionFilter !== 'All' && d.section !== sectionFilter) return false;
+    if (q && !(d.name + ' ' + d.brand + ' ' + d.notes).toLowerCase().includes(q)) return false;
     return true;
   });
-  const tried = dresses.filter(d=>d.status!=='Not tried yet').length;
-  const pct   = dresses.length ? Math.round((tried/dresses.length)*100) : 0;
-  document.getElementById('prog-label').textContent = `${tried} / ${dresses.length} tried on`;
-  document.getElementById('prog-fill').style.width = pct+'%';
-  const grid  = document.getElementById('dress-grid');
-  const empty = document.getElementById('empty-collection');
-  if (!filtered.length) { grid.innerHTML=''; empty.style.display='block'; return; }
+  const tried = dresses.filter(d => d.status !== 'Not tried yet').length;
+  const pct = dresses.length ? Math.round((tried/dresses.length)*100) : 0;
+  document.getElementById('prog-label').textContent = tried + ' / ' + dresses.length + ' tried on';
+  document.getElementById('prog-fill').style.width = pct + '%';
+  const grid = document.getElementById('dress-grid'), empty = document.getElementById('empty-collection');
+  if (!filtered.length) { grid.innerHTML = ''; empty.style.display = 'block'; return; }
   empty.style.display = 'none';
-  grid.innerHTML = filtered.map(d=>`
-    <div class="dress-card" onclick="openDetail(${d.id})">
-      <div class="dress-photo-wrap" style="background:${d.color}1A">
-        ${d.photo ? `<img src="${d.photo}" alt="${d.name}" loading="lazy">` : `<div class="dress-no-photo">${d.name?d.name[0]:''}</div>`}
-        <div class="dress-color-bar" style="background:${d.color}"></div>
-      </div>
-      <div class="dress-info">
-        <div class="dress-name">${d.name||'Unnamed'}</div>
-        <div class="dress-brand">${d.brand||''}</div>
-        <div class="dress-badges">
-          <span class="badge ${STATUS_BADGE[d.status]}">${STATUS_LABEL[d.status]}</span>
-          ${d.section?`<span class="badge badge-section">${d.section}</span>`:''}
-          ${d.colorMatch==='yes'?'<span class="badge badge-dw-yes">DW</span>':d.colorMatch==='near'?'<span class="badge badge-dw-near">DW~</span>':''}
-        </div>
-      </div>
-    </div>`).join('');
+  grid.innerHTML = filtered.map(d => {
+    const dw = d.colorMatch === 'yes' ? '<span class="badge badge-dw-yes">DW</span>' : d.colorMatch === 'near' ? '<span class="badge badge-dw-near">DW~</span>' : '';
+    return '<div class="dress-card" onclick="openDetail(' + d.id + ')">'
+      + '<div class="dress-photo-wrap" style="background:' + d.color + '18">'
+      + (d.photo ? '<img src="' + d.photo + '" alt="' + d.name + '" loading="lazy">' : '<div class="dress-no-photo">' + (d.name ? d.name[0] : '') + '</div>')
+      + '<div class="dress-color-bar" style="background:' + d.color + '"></div></div>'
+      + '<div class="dress-info"><div class="dress-name">' + (d.name||'Unnamed') + '</div>'
+      + '<div class="dress-brand">' + (d.brand||'') + '</div>'
+      + '<div class="dress-badges"><span class="badge ' + STATUS_BADGE[d.status] + '">' + STATUS_LABEL[d.status] + '</span>'
+      + (d.section ? '<span class="badge badge-section">' + d.section + '</span>' : '') + dw + '</div></div></div>';
+  }).join('');
 }
 
-// ═══ DETAIL ═══
+// DETAIL
 function openDetail(id) {
   viewingId = id;
-  const d = dresses.find(x=>x.id===id);
-  document.getElementById('d-title').textContent = d.name||'Unnamed Dress';
-  const pa = document.getElementById('d-photo-area');
-  pa.innerHTML = d.photo
-    ? `<img src="${d.photo}" class="detail-photo" alt="${d.name}">`
-    : `<div class="detail-no-photo" style="background:${d.color}14">No photo yet</div>`;
+  const d = dresses.find(x => x.id === id);
+  document.getElementById('d-title').textContent = d.name || 'Unnamed Dress';
+  document.getElementById('d-photo-area').innerHTML = d.photo
+    ? '<img src="' + d.photo + '" class="detail-photo" alt="' + d.name + '">'
+    : '<div class="detail-no-photo" style="background:' + d.color + '12">No photo yet</div>';
   document.getElementById('d-grid').innerHTML = [
-    ['Brand',d.brand||'—'],['Fabric',d.fabric||'—'],
-    ['Season',d.season||'—'],['Section',d.section||'—'],
-    ['Length',d.length||'—'],['Location',d.location||'—'],
-    ['Status',d.status||'—'],['Fit',d.fit||'—'],
-    ['Times Worn',d.wornDates.length],['Last Worn',d.wornDates.at(-1)||'Never'],['Dark Winter',DW_LABEL[d.colorMatch||'']],
-  ].map(([k,v])=>`<div class="detail-item"><div class="dk">${k}</div><div class="dv">${v}</div></div>`).join('');
+    ['Brand',d.brand||'\u2014'],['Fabric',d.fabric||'\u2014'],
+    ['Season',d.season||'\u2014'],['Section',d.section||'\u2014'],
+    ['Length',d.length||'\u2014'],['Location',d.location||'\u2014'],
+    ['Status',d.status||'\u2014'],['Fit',d.fit||'\u2014'],
+    ['Times Worn',d.wornDates.length],['Last Worn',d.wornDates.at(-1)||'Never'],
+    ['Dark Winter',DW_LABEL[d.colorMatch||'']],['',''],
+  ].map(([k,v]) => '<div class="detail-item"><div class="dk">' + k + '</div><div class="dv">' + v + '</div></div>').join('');
   const dn = document.getElementById('d-notes');
-  if (d.notes) { dn.textContent='"'+d.notes+'"'; dn.style.display='block'; } else dn.style.display='none';
-  const ab = document.getElementById('d-ai-box');
-  ab.className='ai-box'; ab.textContent='';
+  if (d.notes) { dn.textContent = '\u201c' + d.notes + '\u201d'; dn.style.display = 'block'; } else dn.style.display = 'none';
+  const ab = document.getElementById('d-ai-box'); ab.className = 'ai-box'; ab.textContent = '';
   document.getElementById('detail-overlay').classList.add('open');
 }
-function closeDetail() { document.getElementById('detail-overlay').classList.remove('open'); viewingId=null; }
-function closeDetailIfBg(e) { if (e.target===document.getElementById('detail-overlay')) closeDetail(); }
-function editCurrentDress() { const id=viewingId; closeDetail(); openEdit(id); }
-
+function closeDetail() { document.getElementById('detail-overlay').classList.remove('open'); viewingId = null; }
+function closeDetailIfBg(e) { if (e.target === document.getElementById('detail-overlay')) closeDetail(); }
+function editCurrentDress() { const id = viewingId; closeDetail(); openEdit(id); }
 function logWearToday() {
-  const d = dresses.find(x=>x.id===viewingId);
-  if (!d) return;
+  const d = dresses.find(x => x.id === viewingId); if (!d) return;
   const today = new Date().toISOString().slice(0,10);
   if (!d.wornDates.includes(today)) { d.wornDates.push(today); save(dresses); renderGrid(); }
+  const btn = event.target; btn.textContent = 'Logged!';
+  setTimeout(() => { btn.textContent = 'Log Wear Today'; }, 2000);
   openDetail(viewingId);
-  const btn = event.target;
-  const orig = btn.textContent;
-  btn.textContent = 'Logged!';
-  setTimeout(()=>btn.textContent=orig, 2000);
 }
-
 async function dressAI(type) {
-  const d = dresses.find(x=>x.id===viewingId);
-  if (!d) return;
+  const d = dresses.find(x => x.id === viewingId); if (!d) return;
   const box = document.getElementById('d-ai-box');
-  box.className='ai-box show';
-  box.innerHTML='<span class="ai-thinking">Thinking&hellip;</span>';
-  const prompts = {
-    style:  `Give me 3 specific outfit ideas for this dress: "${d.name}" by ${d.brand}. Fabric: ${d.fabric}, length: ${d.length}, season: ${d.season}. I live in Houston where it's very hot. Be specific and practical.`,
-    rotate: `This dress is "${d.name}" (${d.brand}, ${d.fabric}, ${d.season}), currently in my ${d.location}. Should it be in my main closet (20-dress limit) or storage? What month should it rotate for Houston's climate?`,
-    color: `I am a Dark Winter color season (cool, dark, high-contrast). Analyze this dress for my color palette: "${d.name}" by ${d.brand}. The dress color/accent is ${d.color}. Notes: "${d.notes}". Tell me: (1) is it in my Dark Winter palette, (2) does it work as-is or would accessories help, (3) a one-line verdict: In Palette / Close Match / Outside Palette. Be specific. No emoji.`,
-    decide: \`Help me decide whether to keep, sell, or donate: "${d.name}" by ${d.brand}. Fabric: ${d.fabric}, season: ${d.season}, fit: "${d.fit||'not tried yet'}", times worn: ${d.wornDates.length}. Notes: "${d.notes}". Be honest and direct.`,
+  box.className = 'ai-box show'; box.innerHTML = '<span class="ai-thinking">Thinking\u2026</span>';
+  const p = {
+    style:  'Give me 3 specific outfit ideas for this dress: "' + d.name + '" by ' + d.brand + '. Fabric: ' + d.fabric + ', length: ' + d.length + ', season: ' + d.season + '. I live in Houston where it is very hot. Be specific and practical. No emoji.',
+    rotate: 'This dress is "' + d.name + '" (' + d.brand + ', ' + d.fabric + ', ' + d.season + '), in my ' + d.location + '. Should it be in my main closet (20-dress limit) or storage? What month should it rotate for Houston? No emoji.',
+    color:  'I am a Dark Winter color season (cool, dark, high-contrast). Analyze this dress: "' + d.name + '" by ' + d.brand + '. Color: ' + d.color + '. Notes: "' + d.notes + '". (1) Is it in my Dark Winter palette? (2) Does it work as-is or would accessories help? (3) One-line verdict: In Palette / Close Match / Outside Palette. No emoji.',
+    decide: 'Help me decide whether to keep, sell, or donate: "' + d.name + '" by ' + d.brand + '. Fabric: ' + d.fabric + ', season: ' + d.season + ', fit: "' + (d.fit||'not tried yet') + '", times worn: ' + d.wornDates.length + '. Notes: "' + d.notes + '". Be honest and direct. No emoji.',
   };
   try {
-    const res  = await fetch('https://api.anthropic.com/v1/messages',{ method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ model:'claude-sonnet-4-20250514', max_tokens:800, system:'You are a personal wardrobe stylist. The user loves retro/vintage brands (PinUp Girl Clothing, Collectif, Bernie Dexter, Emily and Fin, Som De Flor, Madewell, Jessa Kae). She lives in Houston, TX (very hot climate). Be warm and practical. No markdown, no bullet asterisks, no emoji.', messages:[{role:'user',content:prompts[type]}] })});
+    const res = await fetch('https://api.anthropic.com/v1/messages', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,system:'You are a personal wardrobe stylist for a vintage/retro dress collector in Houston, TX. She loves cotton, linen, and retro brands. She is a Dark Winter color season. Be warm and practical. No markdown, no asterisks, no emoji.',messages:[{role:'user',content:p[type]}]})});
     const data = await res.json();
-    box.textContent = data.content?.find(b=>b.type==='text')?.text || 'No response received.';
-  } catch { box.textContent='Could not connect. Check your internet connection.'; }
+    box.textContent = (data.content && data.content.find(b => b.type === 'text') || {text:'No response.'}).text;
+  } catch(e) { box.textContent = 'Could not connect. Check your internet connection.'; }
 }
 
-// ═══ FORM ═══
+// FORM
 function openAdd() {
-  editingId=null; currentPhoto=null;
-  document.getElementById('form-title').textContent='New Dress';
-  document.getElementById('f-id').value='';
-  ['name','brand','fit','notes'].forEach(k=>document.getElementById('f-'+k).value='');
-  ['fabric','length','season','section'].forEach(k=>document.getElementById('f-'+k).value='');
-  document.getElementById('f-location').value='Main Closet';
-  document.getElementById('f-status').value='Not tried yet';
-  document.getElementById('f-color').value='#8AAF82';
-  document.getElementById('f-colormatch').value='';
-  document.getElementById('photo-upload-area').style.display='block';
-  document.getElementById('photo-preview-wrap').style.display='none';
-  document.getElementById('f-delete-btn').style.display='none';
+  editingId = null; currentPhoto = null;
+  document.getElementById('form-title').textContent = 'New Dress';
+  document.getElementById('f-id').value = '';
+  ['name','brand','fit','notes'].forEach(k => document.getElementById('f-' + k).value = '');
+  ['fabric','length','season','section'].forEach(k => document.getElementById('f-' + k).value = '');
+  document.getElementById('f-location').value = 'Main Closet';
+  document.getElementById('f-status').value = 'Not tried yet';
+  document.getElementById('f-color').value = '#E8A0A8';
+  document.getElementById('f-colormatch').value = '';
+  document.getElementById('photo-upload-area').style.display = 'block';
+  document.getElementById('photo-preview-wrap').style.display = 'none';
+  document.getElementById('f-delete-btn').style.display = 'none';
   document.getElementById('form-overlay').classList.add('open');
 }
 function openEdit(id) {
-  const d = dresses.find(x=>x.id===id); if (!d) return;
-  editingId=id; currentPhoto=d.photo||null;
-  document.getElementById('form-title').textContent='Edit Dress';
-  document.getElementById('f-id').value=id;
-  document.getElementById('f-name').value=d.name||'';
-  document.getElementById('f-brand').value=d.brand||'';
-  document.getElementById('f-fit').value=d.fit||'';
-  document.getElementById('f-notes').value=d.notes||'';
-  document.getElementById('f-fabric').value=d.fabric||'';
-  document.getElementById('f-length').value=d.length||'';
-  document.getElementById('f-season').value=d.season||'';
-  document.getElementById('f-section').value=d.section||'';
-  document.getElementById('f-location').value=d.location||'Main Closet';
-  document.getElementById('f-status').value=d.status||'Not tried yet';
-  document.getElementById('f-color').value=d.color||'#8AAF82';
-  document.getElementById('f-colormatch').value=d.colorMatch||'';
-  document.getElementById('f-delete-btn').style.display='block';
+  const d = dresses.find(x => x.id === id); if (!d) return;
+  editingId = id; currentPhoto = d.photo || null;
+  document.getElementById('form-title').textContent = 'Edit Dress';
+  document.getElementById('f-id').value = id;
+  document.getElementById('f-name').value = d.name || '';
+  document.getElementById('f-brand').value = d.brand || '';
+  document.getElementById('f-fit').value = d.fit || '';
+  document.getElementById('f-notes').value = d.notes || '';
+  document.getElementById('f-fabric').value = d.fabric || '';
+  document.getElementById('f-length').value = d.length || '';
+  document.getElementById('f-season').value = d.season || '';
+  document.getElementById('f-section').value = d.section || '';
+  document.getElementById('f-location').value = d.location || 'Main Closet';
+  document.getElementById('f-status').value = d.status || 'Not tried yet';
+  document.getElementById('f-color').value = d.color || '#E8A0A8';
+  document.getElementById('f-colormatch').value = d.colorMatch || '';
+  document.getElementById('f-delete-btn').style.display = 'block';
   if (d.photo) {
-    document.getElementById('photo-upload-area').style.display='none';
-    document.getElementById('photo-preview-wrap').style.display='block';
-    document.getElementById('f-photo-preview').src=d.photo;
+    document.getElementById('photo-upload-area').style.display = 'none';
+    document.getElementById('photo-preview-wrap').style.display = 'block';
+    document.getElementById('f-photo-preview').src = d.photo;
   } else {
-    document.getElementById('photo-upload-area').style.display='block';
-    document.getElementById('photo-preview-wrap').style.display='none';
+    document.getElementById('photo-upload-area').style.display = 'block';
+    document.getElementById('photo-preview-wrap').style.display = 'none';
   }
   document.getElementById('form-overlay').classList.add('open');
 }
-function closeForm() { document.getElementById('form-overlay').classList.remove('open'); editingId=null; currentPhoto=null; }
-function closeFormIfBg(e) { if (e.target===document.getElementById('form-overlay')) closeForm(); }
+function closeForm() { document.getElementById('form-overlay').classList.remove('open'); editingId = null; currentPhoto = null; }
+function closeFormIfBg(e) { if (e.target === document.getElementById('form-overlay')) closeForm(); }
 function handlePhoto(input) {
-  const file=input.files[0]; if (!file) return;
-  const reader=new FileReader();
-  reader.onload=ev=>{ currentPhoto=ev.target.result; document.getElementById('f-photo-preview').src=currentPhoto; document.getElementById('photo-upload-area').style.display='none'; document.getElementById('photo-preview-wrap').style.display='block'; };
+  const file = input.files[0]; if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    currentPhoto = ev.target.result;
+    document.getElementById('f-photo-preview').src = currentPhoto;
+    document.getElementById('photo-upload-area').style.display = 'none';
+    document.getElementById('photo-preview-wrap').style.display = 'block';
+  };
   reader.readAsDataURL(file);
 }
-function removePhoto() { currentPhoto=null; document.getElementById('f-photo-preview').src=''; document.getElementById('photo-upload-area').style.display='block'; document.getElementById('photo-preview-wrap').style.display='none'; }
-
+function removePhoto() {
+  currentPhoto = null; document.getElementById('f-photo-preview').src = '';
+  document.getElementById('photo-upload-area').style.display = 'block';
+  document.getElementById('photo-preview-wrap').style.display = 'none';
+}
 function saveDress() {
-  const name=document.getElementById('f-name').value.trim();
+  const name = document.getElementById('f-name').value.trim();
   if (!name) { document.getElementById('f-name').focus(); return; }
-  const dress={ name, brand:document.getElementById('f-brand').value.trim(), fabric:document.getElementById('f-fabric').value, length:document.getElementById('f-length').value, season:document.getElementById('f-season').value, section:document.getElementById('f-section').value, location:document.getElementById('f-location').value, status:document.getElementById('f-status').value, color:document.getElementById('f-color').value, fit:document.getElementById('f-fit').value.trim(), notes:document.getElementById('f-notes').value.trim(), photo:currentPhoto, colorMatch:document.getElementById('f-colormatch').value };
-  if (editingId) { const i=dresses.findIndex(d=>d.id===editingId); dresses[i]={...dresses[i],...dress}; }
-  else { dress.id=Date.now(); dress.wornDates=[]; dresses.push(dress); }
+  const dress = { name, brand:document.getElementById('f-brand').value.trim(), fabric:document.getElementById('f-fabric').value, length:document.getElementById('f-length').value, season:document.getElementById('f-season').value, section:document.getElementById('f-section').value, location:document.getElementById('f-location').value, status:document.getElementById('f-status').value, color:document.getElementById('f-color').value, colorMatch:document.getElementById('f-colormatch').value, fit:document.getElementById('f-fit').value.trim(), notes:document.getElementById('f-notes').value.trim(), photo:currentPhoto };
+  if (editingId) { const i = dresses.findIndex(d => d.id === editingId); dresses[i] = Object.assign({}, dresses[i], dress); }
+  else { dress.id = Date.now(); dress.wornDates = []; dresses.push(dress); }
   save(dresses); closeForm(); renderGrid();
 }
 function deleteDress() {
-  if (!editingId) return;
-  if (!confirm('Remove this dress from your archive?')) return;
-  dresses=dresses.filter(d=>d.id!==editingId); save(dresses); closeForm(); renderGrid();
+  if (!editingId || !confirm('Remove this dress from your archive?')) return;
+  dresses = dresses.filter(d => d.id !== editingId); save(dresses); closeForm(); renderGrid();
 }
 
-// ═══ ROTATION ═══
+// ROTATION
 function renderRotation() {
-  const month = new Date().toLocaleString('default',{month:'long'});
-  const info  = HOUSTON[month]||{label:month,note:'Check your rotation schedule',season:'summer'};
-  document.getElementById('current-month-callout').innerHTML=`
-    <div class="callout-month">${month} &mdash; Houston, TX</div>
-    <div class="callout-label">${info.label}</div>
-    <div class="callout-note">${info.note}</div>`;
-  const main    = dresses.filter(d=>d.location==='Main Closet'    && d.status==='Keep');
-  const storage = dresses.filter(d=>d.location==='Storage Closet' && d.status==='Keep');
-  document.getElementById('main-fill-label').textContent=`${main.length} / 20`;
-  document.getElementById('main-progress').style.width=Math.min(100,(main.length/20)*100)+'%';
+  const month = new Date().toLocaleString('default', {month:'long'});
+  const info = HOUSTON[month] || {label:month, note:'Check your rotation schedule', season:'summer'};
+  document.getElementById('current-month-callout').innerHTML =
+    '<div class="callout-month">' + month + ' \u2014 Houston, TX</div>'
+    + '<div class="callout-label">' + info.label + '</div>'
+    + '<div class="callout-note">' + info.note + '</div>';
+  const main = dresses.filter(d => d.location === 'Main Closet' && d.status === 'Keep');
+  const stor = dresses.filter(d => d.location === 'Storage Closet' && d.status === 'Keep');
+  document.getElementById('main-fill-label').textContent = main.length + ' / 20';
+  document.getElementById('main-progress').style.width = Math.min(100,(main.length/20)*100) + '%';
   document.getElementById('main-closet-items').innerHTML = main.length
-    ? main.map(d=>`<div class="closet-item"><span class="ci-name">${d.name}</span><span class="ci-tag">${d.section||''}</span></div>`).join('')
+    ? main.map(d => '<div class="closet-item"><span>' + d.name + '</span><span class="ci-tag">' + (d.section||'') + '</span></div>').join('')
     : '<div style="padding:9px 14px;font-size:0.77rem;color:var(--ink-light)">No kept dresses in main closet yet</div>';
-  document.getElementById('storage-fill-label').textContent=`${storage.length} kept`;
-  document.getElementById('storage-closet-items').innerHTML = storage.length
-    ? storage.map(d=>`<div class="closet-item"><span class="ci-name">${d.name}</span><span class="ci-tag">${d.season||''}</span></div>`).join('')
+  document.getElementById('storage-fill-label').textContent = stor.length + ' kept';
+  document.getElementById('storage-closet-items').innerHTML = stor.length
+    ? stor.map(d => '<div class="closet-item"><span>' + d.name + '</span><span class="ci-tag">' + (d.season||'') + '</span></div>').join('')
     : '<div style="padding:9px 14px;font-size:0.77rem;color:var(--ink-light)">No kept dresses in storage yet</div>';
-  document.getElementById('month-grid').innerHTML = Object.entries(HOUSTON).map(([m,i])=>`
-    <div class="month-tile ${TILE_CLASS[i.season]}">
-      <div class="month-tile-name">${m}</div>
-      <div class="month-tile-note">${i.note}</div>
-    </div>`).join('');
+  document.getElementById('month-grid').innerHTML = Object.entries(HOUSTON).map(([m,i]) =>
+    '<div class="month-tile ' + TILE_CLASS[i.season] + '"><div class="month-tile-name">' + m + '</div><div class="month-tile-note">' + i.note + '</div></div>'
+  ).join('');
 }
 
-// ═══ WEAR LOG ═══
+// WEAR LOG
 function renderWearLog() {
-  const worn  = dresses.filter(d=>d.wornDates.length>0).sort((a,b)=>b.wornDates.length-a.wornDates.length).slice(0,5);
-  const never = dresses.filter(d=>d.status==='Keep' && d.wornDates.length===0);
+  const worn = dresses.filter(d => d.wornDates.length > 0).sort((a,b) => b.wornDates.length - a.wornDates.length).slice(0,5);
+  const never = dresses.filter(d => d.status === 'Keep' && d.wornDates.length === 0);
   document.getElementById('most-worn-list').innerHTML = worn.length
-    ? worn.map(d=>`<div class="wear-card-row"><span>${d.name}</span><span class="times">${d.wornDates.length}&times;</span></div>`).join('')
+    ? worn.map(d => '<div class="wear-card-row"><span>' + d.name + '</span><span class="times">' + d.wornDates.length + '\u00d7</span></div>').join('')
     : '<div style="font-size:0.75rem;color:var(--ink-light)">Log some wears to see your favorites</div>';
   document.getElementById('never-worn-list').innerHTML = never.length
-    ? never.map(d=>`<div class="wear-card-row"><span>${d.name}</span><span style="font-size:0.67rem;color:var(--ink-light)">${d.brand}</span></div>`).join('')
+    ? never.map(d => '<div class="wear-card-row"><span>' + d.name + '</span><span style="font-size:0.67rem;color:var(--ink-light)">' + d.brand + '</span></div>').join('')
     : '<div style="font-size:0.75rem;color:var(--ink-light)">Everything kept has been worn!</div>';
-  const all = dresses.flatMap(d=>d.wornDates.map(dt=>({dt,d}))).sort((a,b)=>b.dt.localeCompare(a.dt));
+  const all = dresses.flatMap(d => d.wornDates.map(dt => ({dt,d}))).sort((a,b) => b.dt.localeCompare(a.dt));
   document.getElementById('wear-log-list').innerHTML = all.length
-    ? all.map(({dt,d})=>`<div class="wear-entry"><div class="wear-date">${dt}</div><div class="wear-name">${d.name}</div><div class="wear-brand-sm">${d.brand}</div></div>`).join('')
+    ? all.map(({dt,d}) => '<div class="wear-entry"><div class="wear-date">' + dt + '</div><div class="wear-name">' + d.name + '</div><div class="wear-brand-sm">' + d.brand + '</div></div>').join('')
     : '<div class="empty"><span class="big">No entries yet</span>Open a dress and tap "Log Wear Today" to start.</div>';
 }
 
-// ═══ AI STYLIST ═══
-const SUGGESTIONS = [
-  'What should I wear to an outdoor event in Houston this weekend?',
-  'Help me plan my main closet for this month',
-  'Which of my brands pair well together in one outfit?',
-  'Give me a checklist for my try-on sessions',
-  'What is a good framework for deciding what to sell?',
-  'How can I get more mileage from my All Black section?',
-];
+// AI STYLIST
+const SUGGESTIONS = ['What should I wear to an outdoor event in Houston this weekend?','Help me plan my main closet for this month','Which of my brands pair well together in one outfit?','Give me a checklist for my try-on sessions','What is a good framework for deciding what to sell?','How can I get more mileage from my All Black section?'];
 function renderAISuggestions() {
-  document.getElementById('ai-suggestions').innerHTML = SUGGESTIONS.map(s=>
-    `<button class="ai-suggestion" onclick="askStylistPrompt('${s.replace(/'/g,"\\'")}')">
-      <span class="sq"></span>${s}
-    </button>`).join('');
+  document.getElementById('ai-suggestions').innerHTML = SUGGESTIONS.map(s =>
+    '<button class="ai-suggestion" onclick="askStylistPrompt(\'' + s.replace(/'/g,"\\'") + '\')">'
+    + '<span class="sq"></span>' + s + '</button>').join('');
 }
-async function askStylistPrompt(q) { document.getElementById('ai-query').value=q; await askStylist(); }
+async function askStylistPrompt(q) { document.getElementById('ai-query').value = q; await askStylist(); }
 async function askStylist() {
-  const q=document.getElementById('ai-query').value.trim(); if (!q) return;
-  const box=document.getElementById('ai-response-box');
-  const txt=document.getElementById('ai-response-text');
-  box.className='ai-response-box show';
-  txt.innerHTML='<span class="ai-thinking">Your stylist is thinking&hellip;</span>';
+  const q = document.getElementById('ai-query').value.trim(); if (!q) return;
+  const box = document.getElementById('ai-response-box'), txt = document.getElementById('ai-response-text');
+  box.className = 'ai-response-box show';
+  txt.innerHTML = '<span class="ai-thinking">Your stylist is thinking\u2026</span>';
   box.scrollIntoView({behavior:'smooth',block:'nearest'});
-  const ctx=`My collection: ${dresses.length} dresses. ${dresses.filter(d=>d.status==='Keep').length} kept, ${dresses.filter(d=>d.status==='Sell').length} to sell, ${dresses.filter(d=>d.status==='Not tried yet').length} not yet tried. Sections: All Black, Formal, Winter/Long Sleeve, Spring/Summer, Work/Casual, Occasion. Main closet ~20; storage holds the rest. Brands I love: PinUp Girl Clothing, Collectif, Bernie Dexter, Emily and Fin, Madewell, Som De Flor, Retrolicious, Jessa Kae, Allie Marye.`;
+  const ctx = 'My collection: ' + dresses.length + ' dresses. ' + dresses.filter(d=>d.status==='Keep').length + ' kept, ' + dresses.filter(d=>d.status==='Sell').length + ' to sell. Dark Winter color season. Brands: PinUp Girl Clothing, Collectif, Bernie Dexter, Emily and Fin, Madewell, Som De Flor, Retrolicious, Jessa Kae, Allie Marye. Main closet ~20 dresses; storage has the rest. Houston, TX.';
   try {
-    const res  = await fetch('https://api.anthropic.com/v1/messages',{ method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ model:'claude-sonnet-4-20250514', max_tokens:900, system:'You are a personal wardrobe stylist for a vintage/retro dress collector in Houston, TX. She loves cotton, linen, and retro brands. Be warm, specific, and practical. No markdown headers or asterisks. No emoji. Under 250 words.', messages:[{role:'user',content:ctx+'\n\n'+q}] })});
+    const res = await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:900,system:'You are a personal wardrobe stylist for a vintage/retro dress collector in Houston, TX who is a Dark Winter color season. Be warm, specific, and practical. No markdown, no asterisks, no emoji. Under 250 words.',messages:[{role:'user',content:ctx+'\n\n'+q}]})});
     const data = await res.json();
-    txt.textContent=data.content?.find(b=>b.type==='text')?.text||'No response received.';
-  } catch { txt.textContent='Could not connect. Check your internet connection.'; }
+    txt.textContent = (data.content && data.content.find(b => b.type === 'text') || {text:'No response.'}).text;
+  } catch(e) { txt.textContent = 'Could not connect. Check your internet connection.'; }
 }
 
-
-// ═══ DARK WINTER DATA ═══
-const DW_BEST = [
-  {hex:'#0A0A0A',name:'True Black'},{hex:'#FAFAFA',name:'Icy White'},{hex:'#1B1B3A',name:'Midnight Navy'},
-  {hex:'#6B0F1A',name:'Deep Burgundy'},{hex:'#1A3A2A',name:'Forest Green'},{hex:'#4A0E4E',name:'Deep Plum'},
-  {hex:'#1C3A5E',name:'Dark Teal'},{hex:'#8B0000',name:'True Red'},{hex:'#2C1654',name:'Deep Violet'},
-  {hex:'#1A4A3A',name:'Emerald'},{hex:'#3D0C02',name:'Dark Chocolate'},{hex:'#C0C0C0',name:'Silver'},
-];
-const DW_OK = [
-  {hex:'#722F37',name:'Wine'},{hex:'#2E4A7A',name:'Royal Blue'},{hex:'#4A2040',name:'Mauve'},
-  {hex:'#8B4513',name:'Cool Rust'},{hex:'#556B2F',name:'Dark Olive'},{hex:'#B8860B',name:'Dark Gold'},
-];
-const DW_AVOID = [
-  {hex:'#F5DEB3',name:'Wheat'},{hex:'#FFDAB9',name:'Peach'},{hex:'#98FB98',name:'Pale Green'},
-  {hex:'#FFB6C1',name:'Light Pink'},{hex:'#DEB887',name:'Burlywood'},{hex:'#F0E68C',name:'Khaki'},
-];
-
-const DW_LABEL = { yes:'In palette', near:'Close match', no:'Outside palette', '':'Not assessed' };
-const DW_BADGE = { yes:'badge-dw-yes', near:'badge-dw-near', no:'badge-dw-no', '':'badge-undecided' };
-
-let dwFilter = 'all';
-
+// DARK WINTER PALETTE
 function renderPalette() {
-  const renderSwatches = (arr, containerId) => {
-    document.getElementById(containerId).innerHTML = arr.map(s=>`
-      <div>
-        <div class="dw-swatch" style="background:${s.hex}" title="${s.name}" onclick="selectSwatch('${s.hex}','${s.name}')"></div>
-        <div class="dw-swatch-label">${s.name}</div>
-      </div>`).join('');
+  const mk = (arr, id) => {
+    document.getElementById(id).innerHTML = arr.map(s =>
+      '<div><div class="dw-swatch" style="background:' + s.hex + '" title="' + s.name + '"></div>'
+      + '<div class="dw-swatch-label">' + s.name + '</div></div>').join('');
   };
-  renderSwatches(DW_BEST, 'dw-best-swatches');
-  renderSwatches(DW_OK,   'dw-ok-swatches');
-  renderSwatches(DW_AVOID,'dw-avoid-swatches');
+  mk(DW_BEST,'dw-best-swatches'); mk(DW_OK,'dw-ok-swatches'); mk(DW_AVOID,'dw-avoid-swatches');
   renderDWList();
 }
-
-function selectSwatch(hex, name) {
-  // Tapping a swatch shows a brief tooltip — could be extended
-}
-
 function setDWFilter(f) {
   dwFilter = f;
-  ['all','yes','near','no','unset'].forEach(x => {
-    document.getElementById('dw-filter-'+x).classList.toggle('on', x===f);
-  });
+  ['all','yes','near','no','unset'].forEach(x => document.getElementById('dw-f-' + x).classList.toggle('on', x === f));
   renderDWList();
 }
-
 function renderDWList() {
   const filtered = dresses.filter(d => {
-    if (dwFilter==='all')   return true;
-    if (dwFilter==='yes')   return d.colorMatch==='yes';
-    if (dwFilter==='near')  return d.colorMatch==='near';
-    if (dwFilter==='no')    return d.colorMatch==='no';
-    if (dwFilter==='unset') return !d.colorMatch;
+    if (dwFilter === 'all')   return true;
+    if (dwFilter === 'yes')   return d.colorMatch === 'yes';
+    if (dwFilter === 'near')  return d.colorMatch === 'near';
+    if (dwFilter === 'no')    return d.colorMatch === 'no';
+    if (dwFilter === 'unset') return !d.colorMatch;
     return true;
   });
   const list = document.getElementById('dw-dress-list');
-  if (!filtered.length) { list.innerHTML='<div class="empty"><span class="big">None here</span>No dresses match this filter yet.</div>'; return; }
-  list.innerHTML = filtered.map(d=>`
-    <div class="dw-match-bar" onclick="openDetail(${d.id})">
-      <div class="dw-match-dot" style="background:${d.color||'#ccc'}"></div>
-      <div class="dw-match-text">
-        <strong>${d.name||'Unnamed'}</strong>
-        <span style="font-size:0.75rem;color:var(--ink-light)">${d.brand||''}</span>
-      </div>
-      <span class="badge ${DW_BADGE[d.colorMatch||'']} dw-match-badge">${DW_LABEL[d.colorMatch||'']}</span>
-    </div>`).join('');
+  if (!filtered.length) { list.innerHTML = '<div class="empty"><span class="big">None here</span>No dresses match this filter yet.</div>'; return; }
+  list.innerHTML = filtered.map(d =>
+    '<div class="dw-match-bar" onclick="openDetail(' + d.id + ')">'
+    + '<div class="dw-match-dot" style="background:' + (d.color||'#ccc') + '"></div>'
+    + '<div class="dw-match-info"><div class="dw-match-name">' + (d.name||'Unnamed') + '</div>'
+    + '<div class="dw-match-brand">' + (d.brand||'') + '</div></div>'
+    + '<span class="badge ' + DW_BADGE[d.colorMatch||''] + ' dw-match-badge">' + DW_LABEL[d.colorMatch||''] + '</span></div>'
+  ).join('');
 }
-
 async function askPaletteAdvice() {
-  const box = document.getElementById('palette-ai-box');
-  const txt = document.getElementById('palette-ai-text');
-  box.className = 'ai-response-box show';
-  txt.innerHTML = '<span class="ai-thinking">Thinking&hellip;</span>';
-  const inPalette  = dresses.filter(d=>d.colorMatch==='yes').map(d=>d.name).join(', ')||'none tagged yet';
-  const nearMatch  = dresses.filter(d=>d.colorMatch==='near').map(d=>d.name).join(', ')||'none';
-  const outPalette = dresses.filter(d=>d.colorMatch==='no').map(d=>d.name).join(', ')||'none';
-  const prompt = `I am a Dark Winter color season. In my dress collection: In palette: ${inPalette}. Close match: ${nearMatch}. Outside palette: ${outPalette}. Give me specific advice on: (1) which outside-palette dresses might be salvageable with the right accessories, (2) what to look for when shopping for new dresses as a Dark Winter, and (3) one styling tip specific to Dark Winter dressing. Be practical and specific. No emoji.`;
+  const box = document.getElementById('palette-ai-box'), txt = document.getElementById('palette-ai-text');
+  box.className = 'ai-response-box show'; txt.innerHTML = '<span class="ai-thinking">Thinking\u2026</span>';
+  const inP = dresses.filter(d=>d.colorMatch==='yes').map(d=>d.name).join(', ')||'none tagged yet';
+  const nearP = dresses.filter(d=>d.colorMatch==='near').map(d=>d.name).join(', ')||'none';
+  const outP = dresses.filter(d=>d.colorMatch==='no').map(d=>d.name).join(', ')||'none';
+  const prompt = 'I am a Dark Winter. In palette: ' + inP + '. Close match: ' + nearP + '. Outside palette: ' + outP + '. Give me: (1) which outside-palette dresses might be salvageable with accessories, (2) what to look for shopping as a Dark Winter, (3) one specific Dark Winter styling tip. Practical and specific. No emoji.';
   try {
-    const res  = await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:900,system:'You are an expert personal color analyst specializing in the 12-season color analysis system. Be warm, specific, and practical. No markdown headers or asterisks. No emoji.',messages:[{role:'user',content:prompt}]})});
+    const res = await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:900,system:'You are an expert personal color analyst for the 12-season system. Be warm, specific, practical. No markdown, no asterisks, no emoji.',messages:[{role:'user',content:prompt}]})});
     const data = await res.json();
-    txt.textContent = data.content?.find(b=>b.type==='text')?.text||'No response.';
-  } catch { txt.textContent='Could not connect. Check your internet connection.'; }
+    txt.textContent = (data.content && data.content.find(b => b.type === 'text') || {text:'No response.'}).text;
+  } catch(e) { txt.textContent = 'Could not connect. Check your internet connection.'; }
 }
 
-// ═══ INSTALL BANNER ═══
+// INSTALL + INIT
 if (/iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase()) && !window.navigator.standalone) {
-  document.getElementById('install-banner').style.display='block';
+  document.getElementById('install-banner').style.display = 'block';
 }
-
-// ═══ INIT ═══
 renderGrid();
 renderAISuggestions();
 </script>

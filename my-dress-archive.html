@@ -754,7 +754,7 @@ async function dressAI(type) {
     decide: 'Help me decide whether to keep, sell, or donate: "' + d.name + '" by ' + d.brand + '. Fabric: ' + d.fabric + ', season: ' + d.season + ', fit: "' + (d.fit||'not tried yet') + '", times worn: ' + d.wornDates.length + '. Notes: "' + d.notes + '". Be honest and direct. No emoji.',
   };
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,system:'You are a personal wardrobe stylist for a vintage/retro dress collector in Houston, TX. She loves cotton, linen, and retro brands. She is a Dark Winter color season. Be warm and practical. No markdown, no asterisks, no emoji.',messages:[{role:'user',content:p[type]}]})});
+    const res = await fetch('https://api.anthropic.com/v1/messages', {method:"POST",headers:{"Content-Type":"application/json","x-api-key":"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","anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,system:'You are a personal wardrobe stylist for a vintage/retro dress collector in Houston, TX. She loves cotton, linen, and retro brands. She is a Dark Winter color season. Be warm and practical. No markdown, no asterisks, no emoji.',messages:[{role:'user',content:p[type]}]})});
     const data = await res.json();
     box.textContent = (data.content && data.content.find(b => b.type === 'text') || {text:'No response.'}).text;
   } catch(e) { box.textContent = 'Could not connect. Check your internet connection.'; }
@@ -891,7 +891,7 @@ async function askStylist() {
   box.scrollIntoView({behavior:'smooth',block:'nearest'});
   const ctx = 'My collection: ' + dresses.length + ' dresses. ' + dresses.filter(d=>d.status==='Keep').length + ' kept, ' + dresses.filter(d=>d.status==='Sell').length + ' to sell. Dark Winter color season. Brands: PinUp Girl Clothing, Collectif, Bernie Dexter, Emily and Fin, Madewell, Som De Flor, Retrolicious, Jessa Kae, Allie Marye. Main closet ~20 dresses; storage has the rest. Houston, TX.';
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:900,system:'You are a personal wardrobe stylist for a vintage/retro dress collector in Houston, TX who is a Dark Winter color season. Be warm, specific, and practical. No markdown, no asterisks, no emoji. Under 250 words.',messages:[{role:'user',content:ctx+'\n\n'+q}]})});
+    const res = await fetch('https://api.anthropic.com/v1/messages',{method:"POST",headers:{"Content-Type":"application/json","x-api-key":"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","anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:900,system:'You are a personal wardrobe stylist for a vintage/retro dress collector in Houston, TX who is a Dark Winter color season. Be warm, specific, and practical. No markdown, no asterisks, no emoji. Under 250 words.',messages:[{role:'user',content:ctx+'\n\n'+q}]})});
     const data = await res.json();
     txt.textContent = (data.content && data.content.find(b => b.type === 'text') || {text:'No response.'}).text;
   } catch(e) { txt.textContent = 'Could not connect. Check your internet connection.'; }
@@ -939,7 +939,7 @@ async function askPaletteAdvice() {
   const outP = dresses.filter(d=>d.colorMatch==='no').map(d=>d.name).join(', ')||'none';
   const prompt = 'I am a Dark Winter. In palette: ' + inP + '. Close match: ' + nearP + '. Outside palette: ' + outP + '. Give me: (1) which outside-palette dresses might be salvageable with accessories, (2) what to look for shopping as a Dark Winter, (3) one specific Dark Winter styling tip. Practical and specific. No emoji.';
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:900,system:'You are an expert personal color analyst for the 12-season system. Be warm, specific, practical. No markdown, no asterisks, no emoji.',messages:[{role:'user',content:prompt}]})});
+    const res = await fetch('https://api.anthropic.com/v1/messages',{method:"POST",headers:{"Content-Type":"application/json","x-api-key":"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","anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:900,system:'You are an expert personal color analyst for the 12-season system. Be warm, specific, practical. No markdown, no asterisks, no emoji.',messages:[{role:'user',content:prompt}]})});
     const data = await res.json();
     txt.textContent = (data.content && data.content.find(b => b.type === 'text') || {text:'No response.'}).text;
   } catch(e) { txt.textContent = 'Could not connect. Check your internet connection.'; }
